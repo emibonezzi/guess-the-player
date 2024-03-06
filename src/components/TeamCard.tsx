@@ -1,5 +1,4 @@
-import { Box, Image } from "@chakra-ui/react";
-import { Team } from "../entities/Team";
+import { Badge, Box, Heading, Image } from "@chakra-ui/react";
 import { Transfer } from "../entities/Transfer";
 
 interface Props {
@@ -17,8 +16,12 @@ const TeamCard = ({ transfer, type }: Props) => {
           src={transfer?.teams[type].logo}
         ></Image>
       </Box>
-      <div>{transfer?.teams[type].name}</div>
-      <div>{transfer?.date ? new Date(transfer.date).getFullYear() : ""}</div>
+      <Badge>{transfer?.teams[type].name}</Badge>
+      <div>
+        <Heading fontSize="20px">
+          {transfer?.date ? new Date(transfer.date).getFullYear() : ""}
+        </Heading>
+      </div>
     </Box>
   );
 };

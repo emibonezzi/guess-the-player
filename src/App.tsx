@@ -4,6 +4,7 @@ import PlayerTransfers from "./components/PlayerTransfers";
 import UserInput from "./components/UserInput";
 import useCurrentPlayerStore from "./state-management/current-player/store";
 import { sampleResponsePlayer } from "./utils/sampleResponsePlayer";
+import { Box, Divider, Heading } from "@chakra-ui/react";
 
 function App() {
   const { player, setPlayer } = useCurrentPlayerStore();
@@ -14,7 +15,9 @@ function App() {
 
   return (
     <div className="d-flex container-sm flex-column gap-3 justify-content-center align-items-center">
-      <UserInput />
+      <Box display="flex" alignItems="center" gap={5}>
+        <UserInput />
+      </Box>
       <PlayerTransfers />
     </div>
   );

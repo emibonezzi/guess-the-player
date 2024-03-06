@@ -1,15 +1,26 @@
-import { Box, Input } from "@chakra-ui/react";
+import { Box, Divider, Input } from "@chakra-ui/react";
+import { useRef } from "react";
 
 const UserInput = () => {
+  const ref = useRef<HTMLInputElement>(null);
+
   return (
-    <Box w="sm" mb={4}>
-      <Input
-        fontWeight="700"
-        h="150px"
-        fontSize="70px"
-        textAlign="center"
-      ></Input>
-    </Box>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        if (ref.current) console.log(ref.current.value);
+      }}
+    >
+      <Box w="sm" mb={4}>
+        <Input
+          ref={ref}
+          fontWeight="700"
+          h="150px"
+          fontSize="70px"
+          textAlign="center"
+        ></Input>
+      </Box>
+    </form>
   );
 };
 
