@@ -3,12 +3,12 @@ import { create } from "zustand";
 import { PlayerDetail } from "../../entities/PlayerDetail";
 
 interface CurrentPlayerStore {
-  player: PlayerDetail | null;
+  player: PlayerDetail | undefined;
   setPlayer: (player: PlayerDetail) => void;
 }
 
 const useCurrentPlayerStore = create<CurrentPlayerStore>((set) => ({
-  player: null,
+  player: undefined,
   setPlayer: (player) => set((store) => ({ player: player })),
 }));
 
