@@ -9,13 +9,17 @@ interface Props {
 
 const TeamCard = ({ transfer, type }: Props) => {
   return (
-    <div className="d-flex align-items-center flex-column gap-2">
+    <Box display="flex" alignItems="center" flexDirection="column" gap={2}>
       <Box boxSize="110px" display="flex" alignItems="center">
-        <Image objectFit="scale-down" src={transfer?.teams[type].logo}></Image>
+        <Image
+          filter="drop-shadow(8px 8px 4px #0e1111)"
+          objectFit="scale-down"
+          src={transfer?.teams[type].logo}
+        ></Image>
       </Box>
       <div>{transfer?.teams[type].name}</div>
-      <div>{transfer?.date}</div>
-    </div>
+      <div>{transfer?.date ? new Date(transfer.date).getFullYear() : ""}</div>
+    </Box>
   );
 };
 

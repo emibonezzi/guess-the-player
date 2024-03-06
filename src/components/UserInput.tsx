@@ -1,8 +1,15 @@
+import { Box, Input } from "@chakra-ui/react";
+
 const UserInput = () => {
   return (
-    <div className="input-group mb-3">
-      <input className="form-control w-[20px]"></input>
-    </div>
+    <Box w="sm" mb={4}>
+      <Input
+        fontWeight="700"
+        h="150px"
+        fontSize="70px"
+        textAlign="center"
+      ></Input>
+    </Box>
   );
 };
 
