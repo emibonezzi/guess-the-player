@@ -2,6 +2,8 @@ import { mountStoreDevtool } from "simple-zustand-devtools";
 import { create } from "zustand";
 import { Player } from "../../entities/Player";
 import { PlayerDetail } from "../../entities/PlayerDetail";
+import { Team } from "../../entities/Team";
+import { Transfer } from "../../entities/Transfer";
 
 interface CurrentPlayerStore {
   player: PlayerDetail | null;
