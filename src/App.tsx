@@ -13,7 +13,7 @@ function App() {
   }, []);
 
   return (
-    <div className="d-flex flex-column gap-3 justify-content-center align-items-center">
+    <div className="d-flex container-sm flex-column gap-3 justify-content-center align-items-center">
       <UserInput />
       <PlayerTransfers />
     </div>
