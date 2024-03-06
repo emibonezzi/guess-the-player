@@ -1,10 +1,16 @@
-import React from "react";
+import { Team } from "../entities/Team";
+import { Transfer } from "../entities/Transfer";
 
-const TeamCard = () => {
+interface Props {
+  transfer: Transfer;
+}
+
+const TeamCard = ({ transfer }: Props) => {
   return (
     <div className="d-flex align-items-center  flex-column gap-2">
-      <div>LOGO</div>
-      <div>YEAR OF TRANSFER</div>
+      <img src={transfer.teams.in.logo}></img>
+      <div>{transfer.teams.in.name}</div>
+      <div>{new Date(transfer.date).getFullYear()}</div>
     </div>
   );
 };
