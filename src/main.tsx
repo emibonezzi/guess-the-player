@@ -6,6 +6,8 @@ import "bootstrap/dist/css/bootstrap.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <App />
+    <div className="d-flex flex-column gap-3 justify-content-center align-items-center vh-100 vw-100 ">
+      <App />
+    </div>
   </React.StrictMode>
 );
