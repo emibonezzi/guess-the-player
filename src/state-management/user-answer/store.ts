@@ -2,7 +2,7 @@ import { create } from "zustand";
 
 interface UserAnswerStore {
   answer: string;
-  setAnswer: (answer: string) => void;
+  setAnswer: (userAnswer: string) => void;
 }
 
 create<UserAnswerStore>((set) => ({
