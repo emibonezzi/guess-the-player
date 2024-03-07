@@ -1,5 +1,7 @@
 import { Player } from "./Player";
+import { Team } from "./Team";
 
 export interface PlayerFetchedFromTeam {
-  player: Player;
+  team: Team;
+  players: Player[];
 }

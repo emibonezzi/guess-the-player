@@ -5,7 +5,7 @@ import APIClient from "../services/api-client";
 import useFilterQueryStore from "../state-management/filter-query/store";
 import ms from "ms";
 
-const apiClientTeam = new APIClient<FetchResponseTeam>("/transfers");
+const apiClientTeam = new APIClient<FetchResponseTeam>("/players/squads");
 
 const apiClientPlayers = new APIClient<FetchResponsePlayer>("/transfers");
 
@@ -25,9 +25,11 @@ const useTeam = () => {
     staleTime: ms("1h"),
   });
 
-  const randomIndex = Math.floor(Math.random() * allTransfersByTeam?.results);
+  const randomIndex = Math.floor(
+    Math.random() * allTransfersByTeam?.response[0].players.length - 1
+  );
 
-  const playerId = allTransfersByTeam?.response[randomIndex].player.id;
+  const playerId = allTransfersByTeam?.response[0].players[randomIndex].id;
 
   const {
     data: randomPlayer,
