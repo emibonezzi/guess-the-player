@@ -1,20 +1,19 @@
-import React from "react";
+import { Divider, Spinner } from "@chakra-ui/react";
+import useTeam from "../hooks/useTeam";
 import TeamCard from "./TeamCard";
-import useCurrentPlayerStore from "../state-management/current-player/store";
-import { Divider } from "@chakra-ui/react";
 
 const PlayerTransfers = () => {
-  const { player } = useCurrentPlayerStore();
-  const firstTransfer = player?.transfers[player.transfers.length - 1];
+  const { randomPlayer, isLoadingPlayer } = useTeam();
+
+  if (isLoadingPlayer) return <Spinner />;
 
   return (
     <>
       <div className="d-flex gap-2 flex-wrap">
         <Divider />
-        {player?.transfers.map((transfer, index) => (
+        {randomPlayer?.response[0].transfers.map((transfer, index) => (
           <TeamCard key={index} type="in" transfer={transfer} />
         ))}
-        <TeamCard type="out" transfer={firstTransfer} />
         <Divider />
       </div>
     </>

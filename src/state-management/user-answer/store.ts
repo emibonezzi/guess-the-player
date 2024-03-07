@@ -1,11 +1,18 @@
+import { mountStoreDevtool } from "simple-zustand-devtools";
 import { create } from "zustand";
 
 interface UserAnswerStore {
-  answer: string;
-  setAnswer: (userAnswer: string) => void;
+  answer: boolean;
+  setAnswer: () => void;
 }
 
-create<UserAnswerStore>((set) => ({
-  answer: "",
-  setAnswer: (userAnswer) => set((store) => ({ answer: userAnswer })),
+const useUserAnswer = create<UserAnswerStore>((set) => ({
+  answer: false,
+  setAnswer: () => set((store) => ({ answer: !store })),
 }));
+
+if (process.env.NODE_ENV === "development") {
+  mountStoreDevtool("UserAnswerStore", useUserAnswer);
+}
+
+export default useUserAnswer;
