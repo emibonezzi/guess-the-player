@@ -3,7 +3,7 @@ import { Transfer } from "../entities/Transfer";
 
 interface Props {
   type: "in" | "out";
-  transfer: Transfer | undefined;
+  transfer: Transfer | null;
 }
 
 const TeamCard = ({ transfer, type }: Props) => {

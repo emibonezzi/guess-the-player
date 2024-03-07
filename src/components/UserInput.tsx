@@ -1,4 +1,4 @@
-import { Box, Input, useToast } from "@chakra-ui/react";
+import { Box, Button, Input, useToast } from "@chakra-ui/react";
 import { useRef } from "react";
 import useTeam from "../hooks/useTeam";
 import useFilterQueryStore from "../state-management/filter-query/store";
@@ -15,6 +15,7 @@ const UserInput = () => {
     <form
       onSubmit={(e) => {
         e.preventDefault();
+        console.log(randomTeamId);
         setTeamId(randomTeamId);
         if (ref.current) {
           if (
@@ -45,6 +46,7 @@ const UserInput = () => {
           textAlign="center"
         ></Input>
       </Box>
+      <Button display="none">Submit</Button>
     </form>
   );
 };

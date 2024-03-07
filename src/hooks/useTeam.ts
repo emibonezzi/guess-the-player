@@ -22,14 +22,14 @@ const useTeam = () => {
       apiClientTeam.getAll({
         params: { team: filterQuery.teamId },
       }),
-    staleTime: ms("1h"),
   });
 
-  const randomIndex = Math.floor(
-    Math.random() * allTransfersByTeam?.response[0].players.length - 1
-  );
+  const playerId =
+    allTransfersByTeam?.response[0].players[
+      Math.floor(Math.random() * allTransfersByTeam?.response[0].players.length)
+    ].id;
 
-  const playerId = allTransfersByTeam?.response[0].players[randomIndex].id;
+  console.log(playerId);
 
   const {
     data: randomPlayer,
