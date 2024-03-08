@@ -3,20 +3,22 @@ import { useRef } from "react";
 import useTeam from "../hooks/useTeam";
 import useFilterQueryStore from "../state-management/filter-query/store";
 import getRandomTeamId from "../utils/getRandomTeamId";
+import getRandomLeague from "../utils/getRandomLeague";
+import getRandomSeason from "../utils/getRandomSeason";
 
 const UserInput = () => {
   const { randomPlayer } = useTeam();
   const ref = useRef<HTMLInputElement>(null);
   const toast = useToast();
-  const { setTeamId } = useFilterQueryStore();
-  const { randomTeamId } = getRandomTeamId();
+  const { setFilterQuery } = useFilterQueryStore();
+  const { randomLeague } = getRandomLeague();
+  const { randomSeason } = getRandomSeason();
 
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        console.log(randomTeamId);
-        setTeamId(randomTeamId);
+        setFilterQuery({ leagueId: randomLeague, season: randomSeason });
         if (ref.current) {
           if (
             randomPlayer?.response[0].player?.name
@@ -46,7 +48,7 @@ const UserInput = () => {
           textAlign="center"
         ></Input>
       </Box>
-      <Button display="none">Submit</Button>
+      <Button type="submit">Submit</Button>
     </form>
   );
 };

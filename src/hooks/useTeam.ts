@@ -1,36 +1,39 @@
 import { useQuery } from "@tanstack/react-query";
+import ms from "ms";
 import { FetchResponsePlayer } from "../entities/FetchResponsePlayer";
-import { FetchResponseTeam } from "../entities/FetchResponseTeam";
+import { FetchResponseTopScorers } from "../entities/FetchResponseTopScorers";
 import APIClient from "../services/api-client";
 import useFilterQueryStore from "../state-management/filter-query/store";
-import ms from "ms";
 
-const apiClientTeam = new APIClient<FetchResponseTeam>("/players/squads");
+const apiClientTopScorers = new APIClient<FetchResponseTopScorers>(
+  "/players/topscorers"
+);
 
 const apiClientPlayers = new APIClient<FetchResponsePlayer>("/transfers");
 
 const useTeam = () => {
   const filterQuery = useFilterQueryStore((s) => s.filterQuery);
 
+  // call top scorers API
   const {
-    data: allTransfersByTeam,
+    data: topScorers,
     isLoading,
     error,
-  } = useQuery<FetchResponseTeam>({
-    queryKey: ["team", filterQuery],
+  } = useQuery<FetchResponseTopScorers>({
+    queryKey: ["query", filterQuery],
     queryFn: () =>
-      apiClientTeam.getAll({
-        params: { team: filterQuery.teamId },
+      apiClientTopScorers.getAll({
+        params: { league: filterQuery.leagueId, season: filterQuery.season },
       }),
   });
 
+  // get randomPlayerId from topscorers list
   const playerId =
-    allTransfersByTeam?.response[0].players[
-      Math.floor(Math.random() * allTransfersByTeam?.response[0].players.length)
-    ].id;
+    topScorers?.response[
+      Math.floor(Math.random() * topScorers?.response.length)
+    ].player.id;
 
-  console.log(playerId);
-
+  // call transfers API with player Id
   const {
     data: randomPlayer,
     isLoading: isLoadingPlayer,
@@ -45,7 +48,15 @@ const useTeam = () => {
     staleTime: ms("1h"),
   });
 
-  return { allTransfersByTeam, randomPlayer, isLoadingPlayer, playerError };
+  const playerTransfers = randomPlayer?.response[0].transfers;
+
+  return {
+    topScorers,
+    playerTransfers,
+    randomPlayer,
+    isLoadingPlayer,
+    playerError,
+  };
 };
 
 export default useTeam;
