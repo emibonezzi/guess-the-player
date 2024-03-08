@@ -8,9 +8,7 @@ import useFilterQueryStore from "./state-management/filter-query/store";
 function App() {
   return (
     <div className="d-flex container-sm flex-column gap-3 justify-content-center align-items-center">
-      <Box display="flex" alignItems="center" gap={5}>
-        <UserInput />
-      </Box>
+      <Box display="flex" alignItems="center" gap={5}></Box>
       <PlayerTransfers />
     </div>
   );

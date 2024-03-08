@@ -1,12 +1,10 @@
 import { UseQueryOptions, useQueries, useQuery } from "@tanstack/react-query";
-import ms from "ms";
 import { FetchResponsePlayer } from "../entities/FetchResponsePlayer";
+import { FetchResponsePlayerProfile } from "../entities/FetchResponsePlayerProfile";
+import { FetchResponsePlayerSeasons } from "../entities/FetchResponsePlayerSeasons";
 import { FetchResponseTopScorers } from "../entities/FetchResponseTopScorers";
 import APIClient from "../services/api-client";
 import useFilterQueryStore from "../state-management/filter-query/store";
-import { FetchResponsePlayerSeasons } from "../entities/FetchResponsePlayerSeasons";
-import { FetchResponsePlayerProfile } from "../entities/FetchResponsePlayerProfile";
-import { Team } from "../entities/Team";
 
 const apiClientTopScorers = new APIClient<FetchResponseTopScorers>(
   "/players/topscorers"
@@ -81,38 +79,23 @@ const useTeam = () => {
   // create clubs obj
   const playerClubs = responseForEverySeason.map((item) => ({
     date: item.data?.parameters.season,
-    team: item.data?.response[0].statistics[0].team.name,
-    logo: item.data?.response[0].statistics[0].team.logo,
+    team:
+      item.data?.response.length > 0
+        ? item.data?.response[0].statistics[0].team.name
+        : null,
+    logo:
+      item.data?.response.length > 0
+        ? item.data?.response[0].statistics[0].team.logo
+        : null,
   }));
 
   // create player object
   const playerProfile = {};
 
-  // call transfers API with player Id
-  const {
-    data: randomPlayer,
-    isLoading: isLoadingPlayer,
-    error: playerError,
-  } = useQuery<FetchResponsePlayer>({
-    queryKey: ["player", filterQuery],
-    queryFn: () =>
-      apiClientPlayers.getAll({
-        params: { player: playerId },
-      }),
-    enabled: !!playerId,
-    staleTime: ms("1h"),
-  });
-
-  const playerTransfers = randomPlayer?.response[0].transfers;
-
   return {
     playerClubs,
     responseForEverySeason,
     topScorers,
-    playerTransfers,
-    randomPlayer,
-    isLoadingPlayer,
-    playerError,
   };
 };
 
