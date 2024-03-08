@@ -3,7 +3,7 @@ import useTeam from "../hooks/useTeam";
 import TransferCard from "./TransferCard";
 
 const PlayerTransfers = () => {
-  const { playerClubs, responseForEverySeason } = useTeam();
+  const { playerClubs, playerFiltered, responseForEverySeason } = useTeam();
 
   if (responseForEverySeason.every((item) => item.isLoading))
     return <Spinner />;
@@ -12,7 +12,7 @@ const PlayerTransfers = () => {
     <>
       <div className="d-flex gap-2 flex-wrap">
         <Divider />
-        {playerClubs.map((t) =>
+        {playerFiltered.map((t) =>
           t.logo || t.team ? (
             <TransferCard team={t.team} date={t.date} logo={t.logo} />
           ) : null

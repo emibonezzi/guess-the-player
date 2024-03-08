@@ -5,6 +5,7 @@ import { FetchResponsePlayerSeasons } from "../entities/FetchResponsePlayerSeaso
 import { FetchResponseTopScorers } from "../entities/FetchResponseTopScorers";
 import APIClient from "../services/api-client";
 import useFilterQueryStore from "../state-management/filter-query/store";
+import ms from "ms";
 
 const apiClientTopScorers = new APIClient<FetchResponseTopScorers>(
   "/players/topscorers"
@@ -78,22 +79,42 @@ const useTeam = () => {
 
   // create clubs obj
   const playerClubs = responseForEverySeason.map((item) => ({
-    date: item.data?.parameters.season,
+    date: parseInt(item.data?.parameters.season),
     team:
-      item.data?.response.length > 0
+      item.data?.response.length!! > 0
         ? item.data?.response[0].statistics[0].team.name
         : null,
     logo:
-      item.data?.response.length > 0
+      item.data?.response.length!! > 0
         ? item.data?.response[0].statistics[0].team.logo
         : null,
   }));
+
+  // reduce duplicates and years
+
+  const playerFiltered = playerClubs.reduce((groups, club) => {
+    console.log(playerClubs);
+    const lastGroup = groups[groups.length - 1];
+
+    if (
+      !lastGroup ||
+      lastGroup.date !== club.date - 1 ||
+      lastGroup.team !== club.team
+    ) {
+      groups.push({ date: club.date, team: club.team, logo: club.logo });
+    } else {
+      lastGroup.date = club.date;
+    }
+
+    return groups;
+  }, []);
 
   // create player object
   const playerProfile = {};
 
   return {
     playerClubs,
+    playerFiltered,
     responseForEverySeason,
     topScorers,
   };
