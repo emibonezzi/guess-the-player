@@ -48,7 +48,9 @@ const UserInput = () => {
           textAlign="center"
         ></Input>
       </Box>
-      <Button type="submit">Submit</Button>
+      <Button display="none" type="submit">
+        Submit
+      </Button>
     </form>
   );
 };

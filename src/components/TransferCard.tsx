@@ -10,7 +10,7 @@ interface Props {
 
 const TransferCard = ({ from, to, date, firstTransfer }: Props) => {
   return (
-    <Box display="flex" alignItems="center">
+    <Box display="flex" alignItems="center" gap={2}>
       {firstTransfer ? (
         <Box display="flex" alignItems="center" flexDirection="column" gap={2}>
           <Box boxSize="110px" display="flex" alignItems="center">
