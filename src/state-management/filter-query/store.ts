@@ -1,23 +1,24 @@
 import { mountStoreDevtool } from "simple-zustand-devtools";
 import { create } from "zustand";
-import getRandomLeague from "../../utils/getRandomLeague";
 import getRandomSeason from "../../utils/getRandomSeason";
+import { FilterQuery } from "../../entities/TransferMarkt/FilterQuery";
+import getRandomTeamId from "../../utils/getRandomTeamId";
 
 interface FilterQueryStore {
   filterQuery: FilterQuery;
-  setLeagueId: (randomId: number) => void;
+  setTeamId: (randomId: number) => void;
   setSeasonId: (randomId: number) => void;
   setFilterQuery: (newQuery: FilterQuery) => void;
 }
 
-const { randomLeague } = getRandomLeague();
 const { randomSeason } = getRandomSeason();
+const { randomTeamId } = getRandomTeamId();
 
 const useFilterQueryStore = create<FilterQueryStore>((set) => ({
-  filterQuery: { leagueId: randomLeague, season: randomSeason },
-  setLeagueId: (randomLeagueId) =>
+  filterQuery: { teamId: randomTeamId, season: randomSeason },
+  setTeamId: (randomTeamId) =>
     set((store) => ({
-      filterQuery: { ...store.filterQuery, leagueId: randomLeagueId },
+      filterQuery: { ...store.filterQuery, teamId: randomTeamId },
     })),
   setSeasonId: (randomSeasonId) =>
     set((store) => ({

@@ -1,10 +1,10 @@
 import axios, { AxiosRequestConfig } from "axios";
-import { FetchResponseTeam } from "../entities/FetchResponseTeam";
+import { FetchResponseTeam } from "../entities/APIFootball/FetchResponseTeam";
 
 const axiosInstance = axios.create({
-  baseURL: "https://api-football-v1.p.rapidapi.com/v3",
+  baseURL: "https://transfermarket.p.rapidapi.com",
   headers: {
-    "x-rapidapi-host": "api-football-v1.p.rapidapi.com/v3",
+    "x-rapidapi-host": "transfermarket.p.rapidapi.com",
     "x-rapidapi-key": import.meta.env.VITE_API_KEY,
   },
 });

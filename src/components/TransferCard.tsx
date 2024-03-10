@@ -1,10 +1,10 @@
 import { Badge, Box, Heading, Image } from "@chakra-ui/react";
-import { Team } from "../entities/Team";
+import { Team } from "../entities/APIFootball/Team";
 
 interface Props {
-  team: string | null | undefined;
-  date: number | null | undefined;
-  logo: string | null | undefined;
+  team: string | undefined;
+  date: string | undefined;
+  logo: string | undefined;
 }
 
 const TransferCard = ({ team, date, logo }: Props) => {

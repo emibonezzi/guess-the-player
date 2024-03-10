@@ -1,8 +1,8 @@
 import { UseQueryOptions, useQueries, useQuery } from "@tanstack/react-query";
-import { FetchResponsePlayer } from "../entities/FetchResponsePlayer";
-import { FetchResponsePlayerProfile } from "../entities/FetchResponsePlayerProfile";
-import { FetchResponsePlayerSeasons } from "../entities/FetchResponsePlayerSeasons";
-import { FetchResponseTopScorers } from "../entities/FetchResponseTopScorers";
+import { FetchResponsePlayer } from "../entities/APIFootball/FetchResponsePlayer";
+import { FetchResponsePlayerProfile } from "../entities/APIFootball/FetchResponsePlayerProfile";
+import { FetchResponsePlayerSeasons } from "../entities/APIFootball/FetchResponsePlayerSeasons";
+import { FetchResponseTopScorers } from "../entities/APIFootball/FetchResponseTopScorers";
 import APIClient from "../services/api-client";
 import useFilterQueryStore from "../state-management/filter-query/store";
 import ms from "ms";
@@ -62,8 +62,8 @@ const useTeam = () => {
 
   // call players API for every season and get clubs array
   const responseForEverySeason = useQueries({
-    queries: playerSeasons
-      ? playerSeasons.map<UseQueryOptions<FetchResponsePlayerProfile>>(
+    queries: playerSeasonsResponse
+      ? playerSeasons?.map<UseQueryOptions<FetchResponsePlayerProfile>>(
           (season) => {
             return {
               queryKey: ["playerSeasonDetail", season],

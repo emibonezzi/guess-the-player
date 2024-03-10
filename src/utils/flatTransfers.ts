@@ -1,5 +1,5 @@
-import { RenderedTransfers } from "../entities/RenderedTeam";
-import { Transfer } from "../entities/Transfer";
+import { RenderedTransfers } from "../entities/APIFootball/RenderedTeam";
+import { Transfer } from "../entities/APIFootball/Transfer";
 
 export default function flatTransfers(
   // create a new array of object RenderedTeam
