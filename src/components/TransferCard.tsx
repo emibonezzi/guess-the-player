@@ -1,4 +1,4 @@
-import { Badge, Box, Heading, Image } from "@chakra-ui/react";
+import { Badge, Box, Grid, GridItem, Heading, Image } from "@chakra-ui/react";
 import { Team } from "../entities/APIFootball/Team";
 
 interface Props {
@@ -9,23 +9,30 @@ interface Props {
 
 const TransferCard = ({ team, date, logo }: Props) => {
   return (
-    <Box display="flex" alignItems="center" flexDirection="column" gap={2}>
-      <Box
-        boxSize="110px"
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-      >
+    <Grid
+      gridTemplateAreas={`"date logo name"`}
+      templateColumns="minmax(70px, auto) 30px 150px"
+      gridAutoFlow="column"
+      alignItems="center"
+      gap={2}
+    >
+      <GridItem area="date">
+        <Heading m={0} fontSize="15px">
+          {date}
+        </Heading>
+      </GridItem>
+      <GridItem area="logo">
         <Image
-          h="110px"
+          h="40px"
           filter="drop-shadow(8px 8px 4px #0e1111)"
           objectFit="scale-down"
           src={logo}
         ></Image>
-      </Box>
-      <Badge>{team}</Badge>
-      <Heading fontSize="15px">{date}</Heading>
-    </Box>
+      </GridItem>
+      <GridItem area="name">
+        <Badge>{team}</Badge>
+      </GridItem>
+    </Grid>
   );
 };
 

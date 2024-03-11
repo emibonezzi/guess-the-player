@@ -65,7 +65,7 @@ const UserInput = () => {
               >
                 {isLoadingResults && <Spinner />}
                 {searchError && <p>Error in searching player</p>}
-                {results
+                {results && results.count.players > 1
                   ? results?.players
                       .slice(0, 5)
                       .map((item) => (

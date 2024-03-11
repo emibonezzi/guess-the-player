@@ -18,8 +18,15 @@ const PlayerTransfers = () => {
 
   return (
     <>
-      <div className="d-flex gap-2 flex-wrap">
-        <Divider />
+      <Divider />
+      <Box
+        w="max-content"
+        maxH="400px"
+        display="flex"
+        flexDirection="column"
+        flexFlow="column wrap"
+        gap={2}
+      >
         {playerTransferHistoryError && (
           <p>{playerTransferHistoryError.message}</p>
         )}
@@ -43,8 +50,8 @@ const PlayerTransfers = () => {
               />
             );
           })}
-        <Divider />
-      </div>
+      </Box>
+      <Divider />
     </>
   );
 };
