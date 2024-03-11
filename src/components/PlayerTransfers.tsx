@@ -1,4 +1,10 @@
-import { Box, Divider, SkeletonCircle, SkeletonText } from "@chakra-ui/react";
+import {
+  Box,
+  Divider,
+  Heading,
+  SkeletonCircle,
+  SkeletonText,
+} from "@chakra-ui/react";
 import usePlayer from "../hooks/usePlayer";
 import useCurrentPlayerStore from "../state-management/current-player/store";
 import TransferCard from "./TransferCard";
@@ -20,7 +26,27 @@ const PlayerTransfers = () => {
     <>
       <Divider />
       {player?.transferHistory?.length > 8 && (
-        <p>Showing only last 8 transfers</p>
+        <Box
+          w="max-content"
+          maxH="400px"
+          display="flex"
+          flexDirection="column"
+          flexFlow="column wrap"
+          gap={2}
+        >
+          <TransferCard
+            team={player?.transferHistory?.slice().reverse()[0].newClubName}
+            logo={player?.transferHistory?.slice().reverse()[0].newClubImage}
+            date={player?.transferHistory
+              ?.slice()
+              .reverse()[0]
+              .date.slice(
+                7,
+                player?.transferHistory?.slice().reverse()[0].date.length
+              )}
+          />
+          <Heading>...</Heading>
+        </Box>
       )}
       <Box
         w="max-content"
