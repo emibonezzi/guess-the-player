@@ -24,7 +24,7 @@ const TransferCard = ({ team, date, logo }: Props) => {
         ></Image>
       </Box>
       <Badge>{team}</Badge>
-      <Heading fontSize="20px">{date}</Heading>
+      <Heading fontSize="15px">{date}</Heading>
     </Box>
   );
 };

@@ -6,9 +6,16 @@ import UserInput from "./components/UserInput";
 function App() {
   return (
     <div className="d-flex container-sm flex-column gap-3 justify-content-center align-items-center">
-      <Box display="flex" alignItems="center" gap={5}></Box>
-      <UserInput />
-      <PlayerTransfers />
+      <Box
+        mt="100px"
+        flexDirection="column"
+        display="flex"
+        alignItems="center"
+        gap={5}
+      >
+        <UserInput />
+        <PlayerTransfers />
+      </Box>
     </div>
   );
 }

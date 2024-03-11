@@ -34,11 +34,14 @@ const usePlayer = () => {
     staleTime: ms("1h"),
   });
 
+  // filter young players out
+
+  const squadFiltered = squadResponse?.squad.filter((item) => item.age > 21);
+
   // get random playerId from squad list
-  const playerId =
-    squadResponse?.squad[
-      Math.floor(Math.random() * squadResponse?.squad.length)
-    ].id;
+  const playerId = squadFiltered?.filter((item) => item.age > 21)[
+    Math.floor(Math.random() * squadFiltered.length)
+  ].id;
 
   // call player transfer history API
   const {

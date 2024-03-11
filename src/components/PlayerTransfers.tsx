@@ -1,8 +1,8 @@
-import { Box, Divider, Heading, Image, Spinner } from "@chakra-ui/react";
-import useTeam from "../hooks/useTeam";
-import TransferCard from "./TransferCard";
+import { Box, Divider, SkeletonCircle, SkeletonText } from "@chakra-ui/react";
 import usePlayer from "../hooks/usePlayer";
 import useCurrentPlayerStore from "../state-management/current-player/store";
+import TransferCard from "./TransferCard";
+import LoadingSkeletons from "./LoadingSkeletons";
 
 const PlayerTransfers = () => {
   const {
@@ -13,7 +13,8 @@ const PlayerTransfers = () => {
 
   const { player } = useCurrentPlayerStore();
 
-  if (isLoadingPlayerTransferHistory || isLoadingSquad) return <Spinner />;
+  if (isLoadingPlayerTransferHistory || isLoadingSquad)
+    return <LoadingSkeletons />;
 
   return (
     <>
@@ -25,12 +26,20 @@ const PlayerTransfers = () => {
         {player?.transferHistory
           ?.slice()
           .reverse()
-          .map((item) => {
+          .map((item, i) => {
             return (
               <TransferCard
                 team={item.newClubName}
                 logo={item.newClubImage}
-                date={item.date.slice(7, item.date.length)}
+                date={
+                  // if index is less than length get date of the next transfer
+                  i < player?.transferHistory?.length - 1
+                    ? `${item.date.slice(7)} - ${player?.transferHistory
+                        .slice()
+                        .reverse()
+                        [i + 1].date.slice(7)}`
+                    : item.date.slice(7, item.date.length)
+                }
               />
             );
           })}

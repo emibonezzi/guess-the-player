@@ -1,4 +1,5 @@
 import { Player } from "./Player";
+import { PlayerFromSearch } from "./PlayerFromSearch";
 
 export interface Search {
   count: {
@@ -8,5 +9,5 @@ export interface Search {
     competitions: number;
     referees: number;
   };
-  players: Player[];
+  players: PlayerFromSearch[];
 }

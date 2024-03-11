@@ -1,42 +1,101 @@
-import { Box, Button, Input, useToast } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Input,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  Spinner,
+  useDisclosure,
+  useToast,
+} from "@chakra-ui/react";
 import { useRef } from "react";
-import useFilterQueryStore from "../state-management/filter-query/store";
+import useSearch from "../hooks/useSearch";
+import useUserAnswer from "../state-management/search-text/store";
 import getRandomSeason from "../utils/getRandomSeason";
 import getRandomTeamId from "../utils/getRandomTeamId";
-import useCurrentPlayerStore from "../state-management/current-player/store";
+import PlayerCard from "./PlayerCard";
 
 const UserInput = () => {
-  const { player } = useCurrentPlayerStore();
-  const { setFilterQuery } = useFilterQueryStore();
+  const { text, setSearchText } = useUserAnswer();
+  const { results, isLoadingResults, searchError } = useSearch(text);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   const ref = useRef<HTMLInputElement>(null);
   const toast = useToast();
+
   const { randomTeamId } = getRandomTeamId();
   const { randomSeason } = getRandomSeason();
 
   return (
-    <Box>
+    <Box
+      display="flex"
+      flexDirection="column"
+      justifyContent="center"
+      alignItems="center"
+      gap={5}
+    >
       <form
         onSubmit={(e) => {
           e.preventDefault();
           if (ref.current) {
-            if (
-              player?.name?.toLowerCase() === ref.current.value.toLowerCase()
-            ) {
-              toast({
-                title: "Right!",
-                colorScheme: "green",
-              });
-            } else {
-              toast({
-                title: "Wrong!",
-                colorScheme: "red",
-              });
+            if (ref.current.value) {
+              onOpen();
+              setSearchText(ref.current.value);
             }
-            setFilterQuery({ teamId: randomTeamId, season: randomSeason });
           }
         }}
       >
-        <Box w="sm" mb={4}>
+        <Modal isOpen={isOpen} onClose={onClose}>
+          <ModalOverlay />
+          <ModalContent>
+            <ModalHeader>Select your player!</ModalHeader>
+            <ModalCloseButton />
+            <ModalBody>
+              <Box
+                gap={5}
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                flexWrap="wrap"
+              >
+                {isLoadingResults && <Spinner />}
+                {searchError && <p>Error in searching player</p>}
+                {results
+                  ? results?.players
+                      .slice(0, 5)
+                      .map((item) => (
+                        <PlayerCard
+                          key={item.id}
+                          onClose={onClose}
+                          name={item.playerName}
+                          image={item.playerImage}
+                          countryImage={item.nationImage}
+                          playerId={item.id}
+                        />
+                      ))
+                  : null}
+              </Box>
+            </ModalBody>
+
+            <ModalFooter>
+              <Button colorScheme="blue" mr={3} onClick={onClose}>
+                Back
+              </Button>
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
+        <Box
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          w="sm"
+          mb={4}
+        >
           <Input
             ref={ref}
             fontWeight="700"
@@ -45,11 +104,9 @@ const UserInput = () => {
             textAlign="center"
           ></Input>
         </Box>
-        <Button display="none" type="submit">
-          Submit
-        </Button>
       </form>
-      <p>{player?.name}</p>
+
+      {/* <p>{player?.name}</p> */}
     </Box>
   );
 };

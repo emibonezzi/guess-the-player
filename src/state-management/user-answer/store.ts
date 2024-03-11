@@ -2,13 +2,14 @@ import { mountStoreDevtool } from "simple-zustand-devtools";
 import { create } from "zustand";
 
 interface UserAnswerStore {
-  answer: boolean;
-  setAnswer: () => void;
+  selectedPlayerId: string;
+  setSelectedPlayerId: (playerId: string) => void;
 }
 
 const useUserAnswer = create<UserAnswerStore>((set) => ({
-  answer: false,
-  setAnswer: () => set((store) => ({ answer: !store })),
+  selectedPlayerId: "",
+  setSelectedPlayerId: (playerId) =>
+    set((store) => ({ selectedPlayerId: playerId })),
 }));
 
 if (process.env.NODE_ENV === "development") {
