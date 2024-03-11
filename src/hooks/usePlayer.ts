@@ -37,8 +37,6 @@ const usePlayer = () => {
   // filter young players out
   const squadFiltered = squadResponse?.squad.filter((item) => item.age > 21);
 
-  // filter players with
-
   // get random playerId from squad list
   const playerId = squadFiltered?.filter((item) => item.age > 21)[
     Math.floor(Math.random() * squadFiltered.length)

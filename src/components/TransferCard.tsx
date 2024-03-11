@@ -1,5 +1,4 @@
-import { Badge, Box, Grid, GridItem, Heading, Image } from "@chakra-ui/react";
-import { Team } from "../entities/APIFootball/Team";
+import { Badge, Grid, GridItem, Heading, Image } from "@chakra-ui/react";
 
 interface Props {
   team: string | undefined;
@@ -11,7 +10,7 @@ const TransferCard = ({ team, date, logo }: Props) => {
   return (
     <Grid
       gridTemplateAreas={`"date logo name"`}
-      templateColumns="minmax(70px, auto) 30px 150px"
+      templateColumns="110px 50px 150px"
       gridAutoFlow="column"
       alignItems="center"
       gap={2}

@@ -19,6 +19,9 @@ const PlayerTransfers = () => {
   return (
     <>
       <Divider />
+      {player?.transferHistory?.length > 8 && (
+        <p>Showing only last 8 transfers</p>
+      )}
       <Box
         w="max-content"
         maxH="400px"
@@ -33,6 +36,10 @@ const PlayerTransfers = () => {
         {player?.transferHistory
           ?.slice()
           .reverse()
+          .slice(
+            player?.transferHistory.length - 8,
+            player?.transferHistory.length
+          )
           .map((item, i) => {
             return (
               <TransferCard
@@ -40,10 +47,19 @@ const PlayerTransfers = () => {
                 logo={item.newClubImage}
                 date={
                   // if index is less than length get date of the next transfer
-                  i < player?.transferHistory?.length - 1
+                  i <
+                  player?.transferHistory.slice(
+                    player?.transferHistory.length - 8,
+                    player?.transferHistory.length
+                  ).length -
+                    1
                     ? `${item.date.slice(7)} - ${player?.transferHistory
                         .slice()
                         .reverse()
+                        .slice(
+                          player?.transferHistory.length - 8,
+                          player?.transferHistory.length
+                        )
                         [i + 1].date.slice(7)}`
                     : item.date.slice(7, item.date.length)
                 }
