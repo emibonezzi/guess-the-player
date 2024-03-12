@@ -1,9 +1,18 @@
-import { Badge, Box, Card, Image, Link, useToast } from "@chakra-ui/react";
+import {
+  Badge,
+  Box,
+  Card,
+  Grid,
+  GridItem,
+  Image,
+  Link,
+  useToast,
+} from "@chakra-ui/react";
 import useCurrentPlayerStore from "../state-management/current-player/store";
 import useFilterQueryStore from "../state-management/filter-query/store";
-import useUserAnswer from "../state-management/user-answer/store";
 import getRandomSeason from "../utils/getRandomSeason";
 import getRandomTeamId from "../utils/getRandomTeamId";
+import useSearchText from "../state-management/search-text/store";
 
 interface Props {
   name: string;
@@ -25,6 +34,7 @@ const PlayerCard = ({
   const { player } = useCurrentPlayerStore();
   const { randomSeason } = getRandomSeason();
   const toast = useToast();
+  const { resetText } = useSearchText();
 
   return (
     <Link
@@ -40,7 +50,7 @@ const PlayerCard = ({
             title: "Stronzo!",
           });
         }
-
+        resetText();
         setFilterQuery({
           teamId: randomTeamId,
           season: randomSeason,
@@ -48,20 +58,28 @@ const PlayerCard = ({
         onClose();
       }}
     >
-      <Card>
-        <Box boxShadow="xl" display="flex" alignItems="center" gap={5}>
-          <Image w="100px" h="100px" objectFit="cover" src={image} />{" "}
-          <Box
-            display="flex"
-            gap={2}
-            flexDirection="column"
-            alignItems="center"
-          >
-            <Badge>{name}</Badge>
-            <Image w="25px" h="25px" objectFit="contain" src={countryImage} />
-          </Box>
-        </Box>
-      </Card>
+      <Grid
+        boxShadow="xl"
+        p={5}
+        gridTemplateAreas={`"image playerInfo"`}
+        templateColumns="50% 50%"
+      >
+        <GridItem area="image">
+          <Image borderRadius="10px" h="100px" objectFit="cover" src={image} />
+        </GridItem>
+        <GridItem
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+          gap={2}
+          area="playerInfo"
+        >
+          <Badge w={"max-content"} fontSize={{ base: "10px", lg: "13px" }}>
+            {name}
+          </Badge>
+          <Image w="15px" h="15px" objectFit="contain" src={countryImage} />
+        </GridItem>
+      </Grid>
     </Link>
   );
 };

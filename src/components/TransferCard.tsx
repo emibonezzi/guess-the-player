@@ -10,13 +10,13 @@ const TransferCard = ({ team, date, logo }: Props) => {
   return (
     <Grid
       gridTemplateAreas={`"date logo name"`}
-      templateColumns="110px 50px 150px"
+      templateColumns={{ base: "80px 35px 100px", lg: "110px 50px 150px" }}
       gridAutoFlow="column"
       alignItems="center"
       gap={2}
     >
       <GridItem area="date">
-        <Heading m={0} fontSize="15px">
+        <Heading fontWeight={200} m={0} fontSize={{ base: "12px", lg: "15px" }}>
           {date}
         </Heading>
       </GridItem>
@@ -29,7 +29,7 @@ const TransferCard = ({ team, date, logo }: Props) => {
         ></Image>
       </GridItem>
       <GridItem area="name">
-        <Badge>{team}</Badge>
+        <Badge fontSize={{ base: "11px", lg: "13px" }}>{team}</Badge>
       </GridItem>
     </Grid>
   );

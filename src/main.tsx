@@ -11,7 +11,7 @@ const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <div className="d-flex flex-column gap-3 justify-content-center align-items-center">
+    <div className="d-flex flex-column justify-content-center align-items-center">
       <QueryClientProvider client={queryClient}>
         <ChakraProvider>
           <App />

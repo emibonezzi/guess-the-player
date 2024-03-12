@@ -1,14 +1,8 @@
-import {
-  Box,
-  Divider,
-  Heading,
-  SkeletonCircle,
-  SkeletonText,
-} from "@chakra-ui/react";
+import { Box, Divider } from "@chakra-ui/react";
 import usePlayer from "../hooks/usePlayer";
 import useCurrentPlayerStore from "../state-management/current-player/store";
-import TransferCard from "./TransferCard";
 import LoadingSkeletons from "./LoadingSkeletons";
+import TransferCard from "./TransferCard";
 
 const PlayerTransfers = () => {
   const {
@@ -23,37 +17,19 @@ const PlayerTransfers = () => {
     return <LoadingSkeletons />;
 
   return (
-    <>
+    <Box display="flex" flexDirection="column" gap={3}>
       <Divider />
-      {player?.transferHistory?.length > 8 && (
-        <Box
-          w="max-content"
-          maxH="400px"
-          display="flex"
-          flexDirection="column"
-          flexFlow="column wrap"
-          gap={2}
-        >
-          <TransferCard
-            team={player?.transferHistory?.slice().reverse()[0].newClubName}
-            logo={player?.transferHistory?.slice().reverse()[0].newClubImage}
-            date={player?.transferHistory
-              ?.slice()
-              .reverse()[0]
-              .date.slice(
-                7,
-                player?.transferHistory?.slice().reverse()[0].date.length
-              )}
-          />
-          <Heading>...</Heading>
-        </Box>
-      )}
       <Box
+        boxShadow="xl"
         w="max-content"
         maxH="400px"
         display="flex"
         flexDirection="column"
-        flexFlow="column wrap"
+        overflowY="scroll"
+        borderWidth="1px"
+        p={5}
+        borderRadius="md"
+        /*         flexFlow="column wrap" */
         gap={2}
       >
         {playerTransferHistoryError && (
@@ -62,30 +38,17 @@ const PlayerTransfers = () => {
         {player?.transferHistory
           ?.slice()
           .reverse()
-          .slice(
-            player?.transferHistory.length - 8,
-            player?.transferHistory.length
-          )
           .map((item, i) => {
             return (
               <TransferCard
                 team={item.newClubName}
                 logo={item.newClubImage}
                 date={
-                  // if index is less than length get date of the next transfer
-                  i <
-                  player?.transferHistory.slice(
-                    player?.transferHistory.length - 8,
-                    player?.transferHistory.length
-                  ).length -
-                    1
+                  // if index is less than length of array get date of the next transfer
+                  i < player?.transferHistory.length - 1
                     ? `${item.date.slice(7)} - ${player?.transferHistory
                         .slice()
                         .reverse()
-                        .slice(
-                          player?.transferHistory.length - 8,
-                          player?.transferHistory.length
-                        )
                         [i + 1].date.slice(7)}`
                     : item.date.slice(7, item.date.length)
                 }
@@ -94,7 +57,7 @@ const PlayerTransfers = () => {
           })}
       </Box>
       <Divider />
-    </>
+    </Box>
   );
 };
 

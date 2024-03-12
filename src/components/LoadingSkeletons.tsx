@@ -1,23 +1,29 @@
-import { Box, Divider, SkeletonCircle, SkeletonText } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
+import LoadingSkeleton from "./LoadingSkeleton";
 
 const LoadingSkeletons = () => {
   return (
-    <div className="d-flex gap-2 flex-wrap">
-      <Divider />
-      <Box>
-        <SkeletonCircle size="100px" />
-        <SkeletonText mt="4" noOfLines={2} spacing="4" skeletonHeight="2" />
+    <Box display="flex" flexDirection="column" gap={3}>
+      <Box
+        boxShadow="xl"
+        w="max-content"
+        maxH="400px"
+        display="flex"
+        flexDirection="column"
+        overflowY="scroll"
+        borderWidth="1px"
+        p={5}
+        borderRadius="md"
+        gap={2}
+      >
+        <LoadingSkeleton />
+        <LoadingSkeleton />
+        <LoadingSkeleton />
+        <LoadingSkeleton />
+        <LoadingSkeleton />
+        <LoadingSkeleton />
       </Box>
-      <Box>
-        <SkeletonCircle size="100px" />
-        <SkeletonText mt="4" noOfLines={2} spacing="4" skeletonHeight="2" />
-      </Box>
-      <Box>
-        <SkeletonCircle size="100px" />
-        <SkeletonText mt="4" noOfLines={2} spacing="4" skeletonHeight="2" />
-      </Box>
-      <Divider />
-    </div>
+    </Box>
   );
 };
 

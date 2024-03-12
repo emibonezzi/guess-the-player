@@ -1,7 +1,10 @@
 import {
   Box,
   Button,
+  Card,
   Input,
+  InputGroup,
+  InputLeftElement,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -19,9 +22,10 @@ import useUserAnswer from "../state-management/search-text/store";
 import getRandomSeason from "../utils/getRandomSeason";
 import getRandomTeamId from "../utils/getRandomTeamId";
 import PlayerCard from "./PlayerCard";
+import { FaSearch } from "react-icons/fa";
 
 const UserInput = () => {
-  const { text, setSearchText } = useUserAnswer();
+  const { text, setSearchText, resetText } = useUserAnswer();
   const { results, isLoadingResults, searchError } = useSearch(text);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -38,6 +42,7 @@ const UserInput = () => {
       justifyContent="center"
       alignItems="center"
       gap={5}
+      mt={3}
     >
       <form
         onSubmit={(e) => {
@@ -48,21 +53,16 @@ const UserInput = () => {
               setSearchText(ref.current.value);
             }
           }
+          e.target.reset();
         }}
       >
         <Modal isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
-          <ModalContent>
-            <ModalHeader>Select your player!</ModalHeader>
+          <ModalContent m={5} boxSize="500px" overflowY="scroll">
+            <ModalHeader>Results for "{text}"</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
-              <Box
-                gap={5}
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-                flexWrap="wrap"
-              >
+              <Box gap={5} display="flex" flexDirection="column">
                 {isLoadingResults && <Spinner />}
                 {searchError && <p>Error in searching player</p>}
                 {results && results.count.players > 1
@@ -93,16 +93,21 @@ const UserInput = () => {
           display="flex"
           justifyContent="center"
           alignItems="center"
-          w="sm"
-          mb={4}
+          w={{ base: "200px", lg: "450px" }}
         >
-          <Input
-            ref={ref}
-            fontWeight="700"
-            h="150px"
-            fontSize="70px"
-            textAlign="center"
-          ></Input>
+          <Box>
+            <InputGroup fontSize={{ base: "15px", lg: "50px" }}>
+              <InputLeftElement>
+                <FaSearch />
+              </InputLeftElement>
+              <Input
+                w="250px"
+                ref={ref}
+                placeholder="Type a player name..."
+                fontWeight="700"
+              ></Input>
+            </InputGroup>
+          </Box>
         </Box>
       </form>
 
