@@ -3,17 +3,19 @@ import usePlayer from "../hooks/usePlayer";
 import useCurrentPlayerStore from "../state-management/current-player/store";
 import LoadingSkeletons from "./LoadingSkeletons";
 import TransferCard from "./TransferCard";
+import usePlayerByGame from "../hooks/usePlayerByGame";
 
 const PlayerTransfers = () => {
   const {
-    isLoadingSquad,
+    isLoadingGamePlan,
+    isLoadingMatchLineup,
     isLoadingPlayerTransferHistory,
     playerTransferHistoryError,
-  } = usePlayer();
+  } = usePlayerByGame();
 
   const { player } = useCurrentPlayerStore();
 
-  if (isLoadingPlayerTransferHistory || isLoadingSquad)
+  if (isLoadingPlayerTransferHistory || isLoadingGamePlan || isLoadingGamePlan)
     return <LoadingSkeletons />;
 
   return (

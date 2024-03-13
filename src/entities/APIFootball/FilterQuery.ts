@@ -1,4 +1,5 @@
 interface FilterQuery {
-  leagueId: number;
   season: number;
+  leagueId: number;
+  dayId: number;
 }

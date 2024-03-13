@@ -5,6 +5,7 @@ import APIClient from "../services/api-client";
 import useFilterQueryStore from "../state-management/filter-query/store";
 import useCurrentPlayerStore from "../state-management/current-player/store";
 import ms from "ms";
+import useCurrentTeamStore from "../state-management/current-team/store";
 
 const apiClientSquad = new APIClient<Squad>("/clubs/get-squad");
 
@@ -14,6 +15,7 @@ const apiClientTransferHistory = new APIClient<TransferHistory>(
 
 const usePlayer = () => {
   const filterQuery = useFilterQueryStore((s) => s.filterQuery);
+  const { setTeam, setSquad } = useCurrentTeamStore();
   const { setPlayer } = useCurrentPlayerStore();
 
   // call squad API
@@ -24,13 +26,19 @@ const usePlayer = () => {
   } = useQuery<Squad>({
     queryKey: ["squad", filterQuery],
     queryFn: () =>
-      apiClientSquad.getAll({
-        params: {
-          id: filterQuery.teamId,
-          saison_id: filterQuery.season,
-          domain: "com",
-        },
-      }),
+      apiClientSquad
+        .getAll({
+          params: {
+            id: filterQuery.teamId,
+            saison_id: filterQuery.season,
+            domain: "com",
+          },
+        })
+        .then((res) => {
+          setTeam(filterQuery.teamId);
+          setSquad(res.squad);
+          return res;
+        }),
     staleTime: ms("1h"),
   });
 

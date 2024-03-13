@@ -14,8 +14,8 @@ function App() {
       alignItems="center"
     >
       <NavBar />
-      <UserInput />
       <PlayerTransfers />
+      <UserInput />
     </Box>
   );
 }

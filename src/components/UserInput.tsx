@@ -42,7 +42,6 @@ const UserInput = () => {
       justifyContent="center"
       alignItems="center"
       gap={5}
-      mt={3}
     >
       <form
         onSubmit={(e) => {

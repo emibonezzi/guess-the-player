@@ -1,4 +1,5 @@
 export interface FilterQuery {
-  teamId: number;
   season: number;
+  dayId: number;
+  leagueId: string;
 }

@@ -3,6 +3,7 @@ import { create } from "zustand";
 import getRandomSeason from "../../utils/getRandomSeason";
 import { FilterQuery } from "../../entities/TransferMarkt/FilterQuery";
 import getRandomTeamId from "../../utils/getRandomTeamId";
+import getRandomLeague from "../../utils/getRandomLeague";
 
 interface FilterQueryStore {
   filterQuery: FilterQuery;
@@ -13,9 +14,14 @@ interface FilterQueryStore {
 
 const { randomSeason } = getRandomSeason();
 const { randomTeamId } = getRandomTeamId();
+const { randomLeague } = getRandomLeague();
 
 const useFilterQueryStore = create<FilterQueryStore>((set) => ({
-  filterQuery: { teamId: randomTeamId, season: randomSeason },
+  filterQuery: {
+    season: randomSeason,
+    dayId: 0,
+    leagueId: randomLeague,
+  },
   setTeamId: (randomTeamId) =>
     set((store) => ({
       filterQuery: { ...store.filterQuery, teamId: randomTeamId },

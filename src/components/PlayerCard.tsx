@@ -13,6 +13,7 @@ import useFilterQueryStore from "../state-management/filter-query/store";
 import getRandomSeason from "../utils/getRandomSeason";
 import getRandomTeamId from "../utils/getRandomTeamId";
 import useSearchText from "../state-management/search-text/store";
+import getRandomLeague from "../utils/getRandomLeague";
 
 interface Props {
   name: string;
@@ -33,6 +34,7 @@ const PlayerCard = ({
   const { randomTeamId } = getRandomTeamId();
   const { player } = useCurrentPlayerStore();
   const { randomSeason } = getRandomSeason();
+  const { randomLeague } = getRandomLeague();
   const toast = useToast();
   const { resetText } = useSearchText();
 
@@ -52,8 +54,9 @@ const PlayerCard = ({
         }
         resetText();
         setFilterQuery({
-          teamId: randomTeamId,
+          leagueId: randomLeague,
           season: randomSeason,
+          dayId: 0,
         });
         onClose();
       }}

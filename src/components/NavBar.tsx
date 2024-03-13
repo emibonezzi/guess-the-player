@@ -19,7 +19,6 @@ const NavBar = () => {
     >
       <FaHome fontSize="25px" />
       <TiStarFullOutline fontSize="25px" />
-      <Hints />
     </Box>
   );
 };
