@@ -70,7 +70,7 @@ const UserInput = () => {
                       .map((item) => (
                         <PlayerCard
                           key={item.id}
-                          onClose={onClose}
+                          onClosePlayerSearch={onClose}
                           name={item.playerName}
                           image={item.playerImage}
                           countryImage={item.nationImage}

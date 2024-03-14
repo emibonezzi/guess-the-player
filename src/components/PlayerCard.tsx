@@ -1,14 +1,31 @@
-import { Badge, Grid, GridItem, Image, Link, useToast } from "@chakra-ui/react";
+import {
+  Badge,
+  Button,
+  Grid,
+  GridItem,
+  Image,
+  Link,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  useDisclosure,
+  useToast,
+} from "@chakra-ui/react";
 import useCurrentPlayerStore from "../state-management/current-player/store";
 import useFilterQueryStore from "../state-management/filter-query/store";
 import useSearchText from "../state-management/search-text/store";
 import useUserHistoryStore from "../state-management/user-history/store";
+import { useRef } from "react";
 
 interface Props {
   name: string;
   image: string;
   countryImage: string;
-  onClose: () => void;
+  onClosePlayerSearch: () => void;
   playerId: string;
 }
 
@@ -16,7 +33,7 @@ const PlayerCard = ({
   name,
   image,
   countryImage,
-  onClose,
+  onClosePlayerSearch,
   playerId,
 }: Props) => {
   const { setFilterQuery } = useFilterQueryStore();
@@ -24,24 +41,21 @@ const PlayerCard = ({
   const toast = useToast();
   const { resetText } = useSearchText();
   const { setPlayerGuessed, setPlayerNotGuessed } = useUserHistoryStore();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const finalRef = useRef(null);
 
   return (
     <Link
       onClick={(e) => {
         if (player?.id === playerId) {
-          toast({
-            title: "Correct!",
-            colorScheme: "green",
-          });
+          onOpen();
           setPlayerGuessed({
             id: player.id,
             name: player.name,
           });
         } else {
           console.log(player?.id, playerId);
-          toast({
-            title: "Stronzo!",
-          });
+          onOpen();
           setPlayerNotGuessed({
             id: player?.id,
             name: player?.name,
@@ -49,9 +63,24 @@ const PlayerCard = ({
         }
         resetText();
         setFilterQuery();
-        onClose();
+        onClosePlayerSearch();
       }}
     >
+      <Modal finalFocusRef={finalRef} isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Modal Title</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody></ModalBody>
+
+          <ModalFooter>
+            <Button colorScheme="blue" mr={3} onClick={onClose}>
+              Close
+            </Button>
+            <Button variant="ghost">Secondary Action</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
       <Grid
         boxShadow="xl"
         p={5}

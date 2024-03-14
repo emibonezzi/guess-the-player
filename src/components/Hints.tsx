@@ -44,7 +44,7 @@ const Hints = () => {
     >
       <Popover>
         <PopoverTrigger>
-          <Link onClick={onOpen}>
+          <Link onClick={isOpen ? onClose : onOpen}>
             <MdOutlineSos fontSize="30px" />
           </Link>
         </PopoverTrigger>
@@ -60,7 +60,6 @@ const Hints = () => {
               </Text>
               <List>
                 <ListItem>
-                  {" "}
                   <ListIcon as={MdCheckCircle} color="green.500" />
                   One of positions played by
                 </ListItem>
