@@ -8,7 +8,10 @@ import useCurrentLineUp from "../state-management/current-lineup/store";
 import useCurrentPlayerStore from "../state-management/current-player/store";
 import useFilterQueryStore from "../state-management/filter-query/store";
 import useGamePlanStore from "../state-management/game-plan/store";
-import getRandomTeamId from "../utils/getRandomTeamId";
+import useUserHistoryStore from "../state-management/user-history/store";
+import { Player } from "../entities/TransferMarkt/Player";
+import { Formations } from "../entities/TransferMarkt/Formations";
+import { PlayerFromLineup } from "../entities/TransferMarkt/PlayerFromLineup";
 import { Lineup } from "../entities/TransferMarkt/Lineup";
 
 const apiClientGamePlan = new APIClient<GamePlan>("/matches/list-by-game-plan");
@@ -23,8 +26,9 @@ const usePlayerByGame = () => {
   const filterQuery = useFilterQueryStore((s) => s.filterQuery);
   const { setPlayer } = useCurrentPlayerStore();
   const { setGamePlan } = useGamePlanStore();
-  const { setLineup } = useCurrentLineUp();
-  const { randomTeamId } = getRandomTeamId();
+  const { setLineup, setWhereIsBigTeamPlaying, whereIsBigTeamPlaying } =
+    useCurrentLineUp();
+  const { playerGuessed } = useUserHistoryStore();
 
   // call game plan API
   const {
@@ -53,7 +57,8 @@ const usePlayerByGame = () => {
   // pick game only if is played by random big team either home or away
   const gamesFiltered = gamePlanResponse?.playDayMatches.filter(
     (item) =>
-      item.homeClubID === randomTeamId || item.awayClubID === randomTeamId
+      item.homeClubID === filterQuery.teamId ||
+      item.awayClubID === filterQuery.teamId
   );
 
   // get random match ID
@@ -64,12 +69,12 @@ const usePlayerByGame = () => {
   // is random big team from random match playing home or away?
   const type =
     gamesFiltered?.find((item) => item.id === randomMatchId)?.awayClubID ===
-    randomTeamId
+    filterQuery.teamId
       ? "away"
       : gamesFiltered?.find((item) => item.id === randomMatchId)?.homeClubID ===
-        randomTeamId
+        filterQuery.teamId
       ? "home"
-      : null;
+      : "home";
 
   // call match lineup API
   const {
@@ -88,6 +93,7 @@ const usePlayerByGame = () => {
         })
         .then((res) => {
           setLineup(res);
+          setWhereIsBigTeamPlaying(type);
           return res;
         }),
     staleTime: ms("1h"),
@@ -96,15 +102,15 @@ const usePlayerByGame = () => {
 
   // get starting lineup
   const startingLineUp = type
-    ? matchLineupResponse?.formations[type].start
+    ? matchLineupResponse?.formations[whereIsBigTeamPlaying].start
     : null;
 
   // get playerId from random position in starting lineups
   const playerId = startingLineUp
     ? startingLineUp[
-        Math.floor(
-          Math.random() * Object.keys(startingLineUp).length
-        ).toString() as keyof Lineup
+        Object.keys(startingLineUp)[
+          Math.floor(Math.random() * Object.keys(startingLineUp).length)
+        ]
       ].id
     : null;
 

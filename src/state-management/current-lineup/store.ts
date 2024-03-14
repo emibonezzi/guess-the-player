@@ -1,15 +1,19 @@
 import { create } from "zustand";
-import { Lineup } from "../../entities/TransferMarkt/PlayerFromLineup";
 import { mountStoreDevtool } from "simple-zustand-devtools";
 import { GameLineUp } from "../../entities/TransferMarkt/GameLineUp";
 
-interface CurrentLineUpStore {
+export interface CurrentLineUpStore {
   lineup: GameLineUp | null;
+  whereIsBigTeamPlaying: string;
+  setWhereIsBigTeamPlaying: (where: string) => void;
   setLineup: (lineup: GameLineUp) => void;
 }
 
 const useCurrentLineUp = create<CurrentLineUpStore>((set) => ({
   lineup: null,
+  whereIsBigTeamPlaying: "home",
+  setWhereIsBigTeamPlaying: (where) =>
+    set((store) => ({ ...store.lineup, whereIsBigTeamPlaying: where })),
   setLineup: (newLineUp) =>
     set((store) => ({
       lineup: newLineUp,

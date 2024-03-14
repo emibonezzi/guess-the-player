@@ -1,19 +1,8 @@
-import {
-  Badge,
-  Box,
-  Card,
-  Grid,
-  GridItem,
-  Image,
-  Link,
-  useToast,
-} from "@chakra-ui/react";
+import { Badge, Grid, GridItem, Image, Link, useToast } from "@chakra-ui/react";
 import useCurrentPlayerStore from "../state-management/current-player/store";
 import useFilterQueryStore from "../state-management/filter-query/store";
-import getRandomSeason from "../utils/getRandomSeason";
-import getRandomTeamId from "../utils/getRandomTeamId";
 import useSearchText from "../state-management/search-text/store";
-import getRandomLeague from "../utils/getRandomLeague";
+import useUserHistoryStore from "../state-management/user-history/store";
 
 interface Props {
   name: string;
@@ -31,12 +20,10 @@ const PlayerCard = ({
   playerId,
 }: Props) => {
   const { setFilterQuery } = useFilterQueryStore();
-  const { randomTeamId } = getRandomTeamId();
   const { player } = useCurrentPlayerStore();
-  const { randomSeason } = getRandomSeason();
-  const { randomLeague } = getRandomLeague();
   const toast = useToast();
   const { resetText } = useSearchText();
+  const { setPlayerGuessed, setPlayerNotGuessed } = useUserHistoryStore();
 
   return (
     <Link
@@ -46,18 +33,22 @@ const PlayerCard = ({
             title: "Correct!",
             colorScheme: "green",
           });
+          setPlayerGuessed({
+            id: player.id,
+            name: player.name,
+          });
         } else {
           console.log(player?.id, playerId);
           toast({
             title: "Stronzo!",
           });
+          setPlayerNotGuessed({
+            id: player?.id,
+            name: player?.name,
+          });
         }
         resetText();
-        setFilterQuery({
-          leagueId: randomLeague,
-          season: randomSeason,
-          dayId: 0,
-        });
+        setFilterQuery();
         onClose();
       }}
     >

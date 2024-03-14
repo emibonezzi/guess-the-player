@@ -1,9 +1,8 @@
 import { Box, Divider } from "@chakra-ui/react";
-import usePlayer from "../hooks/usePlayer";
+import usePlayerByGame from "../hooks/usePlayerByGame";
 import useCurrentPlayerStore from "../state-management/current-player/store";
 import LoadingSkeletons from "./LoadingSkeletons";
 import TransferCard from "./TransferCard";
-import usePlayerByGame from "../hooks/usePlayerByGame";
 
 const PlayerTransfers = () => {
   const {
@@ -15,7 +14,12 @@ const PlayerTransfers = () => {
 
   const { player } = useCurrentPlayerStore();
 
-  if (isLoadingPlayerTransferHistory || isLoadingGamePlan || isLoadingGamePlan)
+  if (
+    isLoadingPlayerTransferHistory ||
+    isLoadingGamePlan ||
+    isLoadingGamePlan ||
+    isLoadingMatchLineup
+  )
     return <LoadingSkeletons />;
 
   return (
@@ -24,7 +28,7 @@ const PlayerTransfers = () => {
       <Box
         boxShadow="xl"
         w="max-content"
-        maxH="400px"
+        maxH={{ base: "400px", lg: "600px" }}
         display="flex"
         flexDirection="column"
         overflowY="scroll"
