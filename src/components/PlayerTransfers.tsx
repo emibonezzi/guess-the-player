@@ -51,9 +51,9 @@ const PlayerTransfers = () => {
                 logo={item.newClubImage}
                 date={
                   // if index is less than length of array get date of the next transfer
-                  i < player?.transferHistory.length - 1
-                    ? `${item.date.slice(7)} - ${player?.transferHistory
-                        .slice()
+                  i < player?.transferHistory!!.length - 1
+                    ? `${item.date.slice(7)} - ${player
+                        ?.transferHistory!!.slice()
                         .reverse()
                         [i + 1].date.slice(7)}`
                     : item.date.slice(7, item.date.length)

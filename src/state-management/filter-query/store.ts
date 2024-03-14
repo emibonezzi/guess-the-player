@@ -13,8 +13,9 @@ const seasons = [
 ];
 
 const teamsAndLeagues = [
-  { leagueId: "IT1", teams: ["46", "12", "5", "6195", "506"] },
+  { leagueId: "IT1", teams: ["46", "12", "5", "6195", "506", "398"] },
   { leagueId: "GB1", teams: ["11", "631", "31", "281"] },
+  { leagueId: "ES1", teams: ["131", "418"] },
 ];
 
 const randomLeagueId =
@@ -34,9 +35,7 @@ const useFilterQueryStore = create<FilterQueryStore>((set) => ({
   filterQuery: {
     season: seasons[Math.floor(Math.random() * seasons.length)],
     dayId: 0,
-    leagueId:
-      teamsAndLeagues[Math.floor(Math.random() * teamsAndLeagues.length)]
-        .leagueId,
+    leagueId: randomLeagueId,
     teamId: randomTeamIdFromLeague,
   },
   setFilterQuery: () =>

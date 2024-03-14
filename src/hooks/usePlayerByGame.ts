@@ -1,5 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import ms from "ms";
+import { Coaches } from "../entities/TransferMarkt/Coaches";
+import { Formations } from "../entities/TransferMarkt/Formations";
 import { GameLineUp } from "../entities/TransferMarkt/GameLineUp";
 import { GamePlan } from "../entities/TransferMarkt/GamePlan";
 import { TransferHistory } from "../entities/TransferMarkt/TransferHistory";
@@ -9,10 +11,6 @@ import useCurrentPlayerStore from "../state-management/current-player/store";
 import useFilterQueryStore from "../state-management/filter-query/store";
 import useGamePlanStore from "../state-management/game-plan/store";
 import useUserHistoryStore from "../state-management/user-history/store";
-import { Player } from "../entities/TransferMarkt/Player";
-import { Formations } from "../entities/TransferMarkt/Formations";
-import { PlayerFromLineup } from "../entities/TransferMarkt/PlayerFromLineup";
-import { Lineup } from "../entities/TransferMarkt/Lineup";
 
 const apiClientGamePlan = new APIClient<GamePlan>("/matches/list-by-game-plan");
 
@@ -23,7 +21,7 @@ const apiClientTransferHistory = new APIClient<TransferHistory>(
 );
 
 const usePlayerByGame = () => {
-  const filterQuery = useFilterQueryStore((s) => s.filterQuery);
+  const { filterQuery } = useFilterQueryStore();
   const { setPlayer } = useCurrentPlayerStore();
   const { setGamePlan } = useGamePlanStore();
   const { setLineup, setWhereIsBigTeamPlaying, whereIsBigTeamPlaying } =
@@ -101,17 +99,32 @@ const usePlayerByGame = () => {
   });
 
   // get starting lineup
-  const startingLineUp = type
-    ? matchLineupResponse?.formations[whereIsBigTeamPlaying].start
+  const startingLineUpRaw = matchLineupResponse
+    ? matchLineupResponse?.formations[whereIsBigTeamPlaying as keyof Formations]
+        .start
+    : null;
+
+  // filter out players already guessed by user
+  const startingLineUp = startingLineUpRaw
+    ? Object.values(startingLineUpRaw).filter((player) => {
+        return !playerGuessed.some(
+          (guessedPlayer) => guessedPlayer.id === player.id
+        );
+      })
     : null;
 
   // get playerId from random position in starting lineups
   const playerId = startingLineUp
-    ? startingLineUp[
-        Object.keys(startingLineUp)[
-          Math.floor(Math.random() * Object.keys(startingLineUp).length)
-        ]
-      ].id
+    ? startingLineUp[Math.floor(Math.random() * startingLineUp.length)].id
+    : null;
+
+  // team without playerId
+  const teamWithoutPlayerId = matchLineupResponse
+    ? Object.values(
+        matchLineupResponse?.formations[
+          whereIsBigTeamPlaying as keyof Formations
+        ].start!!
+      ).filter((player) => player.id !== playerId)
     : null;
 
   // call player transfer history API
@@ -131,7 +144,21 @@ const usePlayerByGame = () => {
           setPlayer({
             id: res.transferHistory[0].playerID,
             name: res.transferHistory[0].playerName,
+            nationality: Object.values(startingLineUp!!).find(
+              (item) => item.id === playerId
+            )?.countryName,
+            position: Object.values(startingLineUp!!).find(
+              (item) => item.id === playerId
+            )?.position,
             transferHistory: res.transferHistory,
+            wasCoachedBy:
+              matchLineupResponse?.coaches[
+                whereIsBigTeamPlaying as keyof Coaches
+              ].name,
+            playedWith:
+              teamWithoutPlayerId!![
+                Math.floor(Math.random() * teamWithoutPlayerId!!.length)
+              ].playerName,
           });
           return res;
         }),

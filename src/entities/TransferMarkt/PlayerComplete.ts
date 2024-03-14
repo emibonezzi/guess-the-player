@@ -1,9 +1,11 @@
-import { Player } from "./Player";
 import { Transfer } from "./Transfer";
-import { TransferHistory } from "./TransferHistory";
 
 export interface PlayerComplete {
   id: string | undefined;
   name: string | undefined;
+  nationality: string | undefined;
+  position: string | undefined;
+  wasCoachedBy: string | undefined;
+  playedWith: string | undefined;
   transferHistory: Transfer[] | undefined;
 }

@@ -1,51 +1,38 @@
 import {
-  Badge,
   Box,
   Button,
-  Heading,
   Link,
   List,
   ListIcon,
   ListItem,
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  ModalOverlay,
   Popover,
   PopoverArrow,
   PopoverBody,
   PopoverCloseButton,
   PopoverContent,
-  PopoverFooter,
   PopoverHeader,
   PopoverTrigger,
   Portal,
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
-import { useRef } from "react";
 import { MdCheckCircle, MdOutlineSos } from "react-icons/md";
-import useCurrentTeamStore from "../state-management/current-team/store";
 import useCurrentPlayerStore from "../state-management/current-player/store";
+import Hint from "./Hint";
 
 const Hints = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { squad } = useCurrentTeamStore();
   const { player } = useCurrentPlayerStore();
 
-  const playerDOBinMS =
-    squad.find((item) => item.id === player?.id)?.dateOfBirth * 1000;
-  const playerAge =
-    new Date(Date.now()).getFullYear() - new Date(playerDOBinMS).getFullYear();
-  const playerNationality = squad.find((item) => item.id === player?.id)
-    ?.nationalities[0].name;
-  const playerMarketValue = squad.find((item) => item.id === player?.id)
-    ?.marketValue.value;
-  const playerPosition = squad.find((item) => item.id === player?.id)?.positions
-    .first.group;
+  const playerPosition = player?.position;
+  const playerWasCoachedBy = player?.wasCoachedBy;
+  const playerPlayedWith = player?.playedWith;
+
+  const playerHints = [
+    `He played as a ${playerPosition} at least once in his career.`,
+    `The player during his career was coached by ${playerWasCoachedBy}`,
+    `${playerPlayedWith} was his teammate during player's career.`,
+  ];
 
   return (
     <Box
@@ -75,15 +62,15 @@ const Hints = () => {
                 <ListItem>
                   {" "}
                   <ListIcon as={MdCheckCircle} color="green.500" />
-                  Current age
+                  One of positions played by
                 </ListItem>
                 <ListItem>
                   <ListIcon as={MdCheckCircle} color="green.500" />
-                  Nationality
+                  One of player's coaches
                 </ListItem>
                 <ListItem>
                   <ListIcon as={MdCheckCircle} color="green.500" />
-                  Position
+                  One of player's teammate
                 </ListItem>
               </List>
               <Box display="flex" justifyContent="center">
@@ -93,9 +80,11 @@ const Hints = () => {
               </Box>
 
               <Box display="flex" flexDirection="column" gap={2}>
-                <Heading>{playerAge}</Heading>
-                <Heading>{playerNationality}</Heading>
-                <Heading>{playerPosition}</Heading>
+                <Hint
+                  hint={
+                    playerHints[Math.floor(Math.random() * playerHints.length)]
+                  }
+                />
               </Box>
             </PopoverBody>
           </PopoverContent>

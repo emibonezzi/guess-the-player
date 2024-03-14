@@ -1,9 +1,8 @@
 import { Box } from "@chakra-ui/react";
 import { FaHome } from "react-icons/fa";
-import { FaRegCircleQuestion } from "react-icons/fa6";
-import { MdOutlineSos } from "react-icons/md";
 import { TiStarFullOutline } from "react-icons/ti";
 import Hints from "./Hints";
+import Points from "./Points";
 
 const NavBar = () => {
   return (
@@ -18,7 +17,8 @@ const NavBar = () => {
       alignItems="center"
     >
       <FaHome fontSize="25px" />
-      <TiStarFullOutline fontSize="25px" />
+      <Points />
+      <Hints />
     </Box>
   );
 };
