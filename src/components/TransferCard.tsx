@@ -29,7 +29,7 @@ const TransferCard = ({ team, date, logo }: Props) => {
         ></Image>
       </GridItem>
       <GridItem area="name">
-        <Badge fontSize={{ base: "11px", lg: "13px" }}>{team}</Badge>
+        <Badge fontSize={{ base: "9px", lg: "13px" }}>{team}</Badge>
       </GridItem>
     </Grid>
   );

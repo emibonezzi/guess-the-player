@@ -6,9 +6,11 @@ import { motion } from "framer-motion";
 import { FaQuestion } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/logoGTP.png";
+import useFilterQueryStore from "../state-management/filter-query/store";
 
 const Homepage = () => {
   const navigate = useNavigate();
+  const { setFilterQuery } = useFilterQueryStore();
   return (
     <Box
       h="100vh"
@@ -56,7 +58,13 @@ const Homepage = () => {
           </Box>
           <Image src={logo} />
         </Box>
-        <Button onClick={() => navigate("/game")} w="100px">
+        <Button
+          onClick={() => {
+            setFilterQuery();
+            navigate("/game");
+          }}
+          w="100px"
+        >
           Play now
         </Button>
       </motion.div>

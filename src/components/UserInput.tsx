@@ -30,6 +30,7 @@ const UserInput = () => {
 
   return (
     <Box
+      mt={5}
       display="flex"
       flexDirection="column"
       justifyContent="center"
@@ -99,7 +100,7 @@ const UserInput = () => {
               <Input
                 w="250px"
                 ref={ref}
-                placeholder="Type a player name..."
+                placeholder="Search player..."
                 fontWeight="700"
               ></Input>
             </InputGroup>

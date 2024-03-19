@@ -25,8 +25,8 @@ function App() {
         alignItems="center"
       >
         <NavBar />
-        <PlayerTransfers />
         <UserInput />
+        <PlayerTransfers />
       </Box>
     </motion.div>
   );
