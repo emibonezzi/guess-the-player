@@ -18,7 +18,7 @@ function App() {
       className="d-flex flex-column gap-3 align-items-center "
     >
       <Box
-        gap={3}
+        gap={1}
         mt="30px"
         flexDirection="column"
         display="flex"
