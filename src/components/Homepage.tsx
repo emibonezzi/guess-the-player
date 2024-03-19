@@ -7,10 +7,29 @@ import { FaQuestion } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/logoGTP.png";
 import useFilterQueryStore from "../state-management/filter-query/store";
+import { useEffect } from "react";
+import usePlayerByGame from "../hooks/usePlayerByGame";
 
 const Homepage = () => {
   const navigate = useNavigate();
   const { setFilterQuery } = useFilterQueryStore();
+  const {
+    isLoadingGamePlan,
+    isLoadingMatchLineup,
+    isLoadingPlayerTransferHistory,
+  } = usePlayerByGame();
+
+  useEffect(() => {
+    setFilterQuery();
+    if (
+      isLoadingGamePlan &&
+      isLoadingMatchLineup &&
+      isLoadingPlayerTransferHistory
+    ) {
+      console.log("Player loaded");
+    }
+  }, []);
+
   return (
     <Box
       h="100vh"
@@ -60,7 +79,6 @@ const Homepage = () => {
         </Box>
         <Button
           onClick={() => {
-            setFilterQuery();
             navigate("/game");
           }}
           w="100px"
