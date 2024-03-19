@@ -1,4 +1,4 @@
-import { Badge, Grid, GridItem, Image, Link } from "@chakra-ui/react";
+import { Badge, Grid, GridItem, Image, Link, useToast } from "@chakra-ui/react";
 import useCurrentPlayerStore from "../state-management/current-player/store";
 import useFilterQueryStore from "../state-management/filter-query/store";
 import useSearchText from "../state-management/search-text/store";
@@ -23,7 +23,7 @@ const PlayerCard = ({
   const { player, setGameOver } = useCurrentPlayerStore();
   const { resetText } = useSearchText();
   const { setPlayerGuessed, setPlayerNotGuessed } = useUserHistoryStore();
-
+  const toast = useToast();
   return (
     <Link
       onClick={() => {
@@ -31,6 +31,12 @@ const PlayerCard = ({
           setPlayerGuessed({
             id: player.id,
             name: player.name,
+          });
+          toast({
+            title: "Correct!",
+            description: "Player guessed!",
+            status: "success",
+            duration: 1500,
           });
           setFilterQuery();
         } else {

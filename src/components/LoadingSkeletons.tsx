@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Badge, Box, Text } from "@chakra-ui/react";
 import LoadingSkeleton from "./LoadingSkeleton";
 
 const LoadingSkeletons = () => {
@@ -6,11 +6,9 @@ const LoadingSkeletons = () => {
     <Box display="flex" flexDirection="column" gap={3}>
       <Box
         boxShadow="xl"
-        w="max-content"
         maxH="400px"
         display="flex"
         flexDirection="column"
-        overflowY="scroll"
         borderWidth="1px"
         p={5}
         borderRadius="md"

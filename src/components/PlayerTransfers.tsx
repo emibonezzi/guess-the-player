@@ -26,7 +26,7 @@ const PlayerTransfers = () => {
       <Divider />
       <Box
         boxShadow="xl"
-        maxH={{ base: "520px", lg: "600px" }}
+        maxH={{ base: "400px", lg: "600px" }}
         display="flex"
         flexDirection="column"
         overflowY="scroll"
