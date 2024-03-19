@@ -10,6 +10,9 @@ const PlayerTransfers = () => {
     isLoadingMatchLineup,
     isLoadingPlayerTransferHistory,
     playerTransferHistoryError,
+    isFetchingGamePlan,
+    isFetchingMatchLineup,
+    isFetchingPlayerTransferHistory,
   } = usePlayerByGame();
 
   const player = useCurrentPlayerStore((s) => s.player);
@@ -17,7 +20,10 @@ const PlayerTransfers = () => {
   if (
     isLoadingPlayerTransferHistory ||
     isLoadingGamePlan ||
-    isLoadingMatchLineup
+    isLoadingMatchLineup ||
+    isFetchingGamePlan ||
+    isFetchingMatchLineup ||
+    isFetchingPlayerTransferHistory
   )
     return <LoadingSkeletons />;
 

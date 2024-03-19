@@ -32,6 +32,7 @@ const usePlayerByGame = () => {
   const {
     data: gamePlanResponse,
     isLoading: isLoadingGamePlan,
+    isFetching: isFetchingGamePlan,
     error: gamePlanError,
   } = useQuery<GamePlan>({
     queryKey: ["gamePlan", filterQuery],
@@ -58,6 +59,7 @@ const usePlayerByGame = () => {
   const {
     data: matchLineupResponse,
     isLoading: isLoadingMatchLineup,
+    isFetching: isFetchingMatchLineup,
     error: matchLineupError,
   } = useQuery<GameLineUp>({
     queryKey: ["lineUps", filterQuery],
@@ -73,7 +75,8 @@ const usePlayerByGame = () => {
           setLineup(res);
           setRandomPlayer(
             getRandomPlayer(
-              res.formations[randomMatch?.bigTeamIsPlaying as keyof Formations].start,
+              res.formations[randomMatch?.bigTeamIsPlaying as keyof Formations]
+                .start,
               playerGuessed,
               res.coaches[randomMatch?.bigTeamIsPlaying as keyof Formations]
             )
@@ -87,6 +90,7 @@ const usePlayerByGame = () => {
   const {
     data: playerTransferHistoryResponse,
     isLoading: isLoadingPlayerTransferHistory,
+    isFetching: isFetchingPlayerTransferHistory,
     error: playerTransferHistoryError,
   } = useQuery<TransferHistory>({
     queryKey: ["playerTransferHistory", filterQuery],
@@ -127,6 +131,9 @@ const usePlayerByGame = () => {
   return {
     playerTransferHistory,
     isLoadingPlayerTransferHistory,
+    isFetchingGamePlan,
+    isFetchingMatchLineup,
+    isFetchingPlayerTransferHistory,
     isLoadingGamePlan,
     gamePlanError,
     isLoadingMatchLineup,

@@ -1,5 +1,5 @@
 import { Box } from "@chakra-ui/react";
-import LoadingSkeleton from "./LoadingSkeleton";
+import BarLoader from "react-spinners/ClipLoader";
 
 const LoadingSkeletons = () => {
   return (
@@ -14,12 +14,13 @@ const LoadingSkeletons = () => {
         borderRadius="md"
         gap={2}
       >
+        <BarLoader color="grey.700" />
+        {/* <LoadingSkeleton />
         <LoadingSkeleton />
         <LoadingSkeleton />
         <LoadingSkeleton />
         <LoadingSkeleton />
-        <LoadingSkeleton />
-        <LoadingSkeleton />
+        <LoadingSkeleton /> */}
       </Box>
     </Box>
   );
