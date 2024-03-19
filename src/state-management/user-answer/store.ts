@@ -9,7 +9,7 @@ interface UserAnswerStore {
 const useUserAnswer = create<UserAnswerStore>((set) => ({
   selectedPlayerId: "",
   setSelectedPlayerId: (playerId) =>
-    set((store) => ({ selectedPlayerId: playerId })),
+    set(() => ({ selectedPlayerId: playerId })),
 }));
 
 if (process.env.NODE_ENV === "development") {

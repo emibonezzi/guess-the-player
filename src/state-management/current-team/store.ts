@@ -12,8 +12,8 @@ interface CurrentTeamStore {
 const useCurrentTeamStore = create<CurrentTeamStore>((set) => ({
   team: 0,
   squad: [],
-  setTeam: (randomTeam) => set((store) => ({ team: randomTeam })),
-  setSquad: (teamSquad) => set((store) => ({ squad: teamSquad })),
+  setTeam: (randomTeam) => set(() => ({ team: randomTeam })),
+  setSquad: (teamSquad) => set(() => ({ squad: teamSquad })),
 }));
 
 if (process.env.NODE_ENV === "development") {

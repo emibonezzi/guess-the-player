@@ -1,6 +1,5 @@
 import { mountStoreDevtool } from "simple-zustand-devtools";
 import { create } from "zustand";
-import { PlayerFromSearch } from "../../entities/TransferMarkt/PlayerFromSearch";
 import { PlayerInDb } from "../../entities/TransferMarkt/PlayerInDb";
 
 interface UserHistoryStore {
@@ -18,7 +17,7 @@ const useUserHistoryStore = create<UserHistoryStore>((set) => ({
     set((store) => ({ playerGuessed: [...store.playerGuessed, player] })),
   setPlayerNotGuessed: (player) =>
     set((store) => ({ playerNotGuessed: [...store.playerNotGuessed, player] })),
-  resetAll: () => set((store) => ({ playerGuessed: [], playerNotGuessed: [] })),
+  resetAll: () => set(() => ({ playerGuessed: [], playerNotGuessed: [] })),
 }));
 
 if (process.env.NODE_ENV === "development") {

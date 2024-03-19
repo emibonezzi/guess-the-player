@@ -3,16 +3,14 @@ import {
   Popover,
   PopoverArrow,
   PopoverBody,
-  PopoverCloseButton,
   PopoverContent,
   PopoverTrigger,
   Portal,
-  Text,
-  useDisclosure,
+  useDisclosure
 } from "@chakra-ui/react";
+import { useRef } from "react";
 import { MdOutlineSos } from "react-icons/md";
 import HintsGallery from "./HintsGallery";
-import { useRef } from "react";
 
 const HintsPopover = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();

@@ -26,7 +26,7 @@ const PlayerCard = ({
 
   return (
     <Link
-      onClick={(e) => {
+      onClick={() => {
         if (player?.id === playerId) {
           setPlayerGuessed({
             id: player.id,

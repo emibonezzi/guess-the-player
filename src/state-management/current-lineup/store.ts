@@ -27,9 +27,9 @@ const useCurrentLineUp = create<CurrentLineUpStore>((set) => ({
   lineup: null,
   randomPlayer: undefined,
   setRandomPlayer: (newRandomPlayer) =>
-    set((store) => ({ randomPlayer: newRandomPlayer })),
+    set(() => ({ randomPlayer: newRandomPlayer })),
   setLineup: (newLineUp) =>
-    set((store) => ({
+    set(() => ({
       lineup: newLineUp,
     })),
 }));

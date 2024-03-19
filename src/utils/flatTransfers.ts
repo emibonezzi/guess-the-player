@@ -1,4 +1,3 @@
-import { RenderedTransfers } from "../entities/APIFootball/RenderedTeam";
 import { Transfer } from "../entities/APIFootball/Transfer";
 
 export default function flatTransfers(

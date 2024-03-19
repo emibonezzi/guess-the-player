@@ -23,12 +23,11 @@ interface GamePlanStore {
 }
 
 const useGamePlanStore = create<GamePlanStore>(
-  (set, get) => ({
+  (set) => ({
     gamePlan: undefined,
     randomMatch: undefined,
-    setRandomMatch: (newMatch) => set((store) => ({ randomMatch: newMatch })),
-    setGamePlan: (randomGamePlan) =>
-      set((store) => ({ gamePlan: randomGamePlan })),
+    setRandomMatch: (newMatch) => set(() => ({ randomMatch: newMatch })),
+    setGamePlan: (randomGamePlan) => set(() => ({ gamePlan: randomGamePlan })),
   }),
   {
     computed: {

@@ -1,4 +1,3 @@
-import { Player } from "./Player";
 import { PlayerFromSearch } from "./PlayerFromSearch";
 
 export interface Search {

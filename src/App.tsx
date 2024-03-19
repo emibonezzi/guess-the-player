@@ -3,22 +3,32 @@ import "./App.css";
 import PlayerTransfers from "./components/PlayerTransfers";
 import UserInput from "./components/UserInput";
 import NavBar from "./components/NavBar";
-import ModalOnAnswer from "./components/ModalOnAnswer";
+import { motion } from "framer-motion";
 
 function App() {
   return (
-    <Box
-      gap={3}
-      mt="30px"
-      flexDirection="column"
-      display="flex"
-      alignItems="center"
+    <motion.div
+      initial={{ scale: 0 }}
+      animate={{ scale: 1 }}
+      transition={{
+        type: "spring",
+        stiffness: 150,
+        damping: 20,
+      }}
+      className="d-flex flex-column gap-3 align-items-center "
     >
-      <ModalOnAnswer />
-      <NavBar />
-      <PlayerTransfers />
-      <UserInput />
-    </Box>
+      <Box
+        gap={3}
+        mt="30px"
+        flexDirection="column"
+        display="flex"
+        alignItems="center"
+      >
+        <NavBar />
+        <PlayerTransfers />
+        <UserInput />
+      </Box>
+    </motion.div>
   );
 }
 

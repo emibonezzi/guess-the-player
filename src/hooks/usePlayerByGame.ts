@@ -1,16 +1,16 @@
 import { useQuery } from "@tanstack/react-query";
-import ms from "ms";
 import { GameLineUp } from "../entities/TransferMarkt/GameLineUp";
 import { GamePlan } from "../entities/TransferMarkt/GamePlan";
 import { TransferHistory } from "../entities/TransferMarkt/TransferHistory";
 import APIClient from "../services/api-client";
+import useCurrentLineUp from "../state-management/current-lineup/store";
 import useCurrentPlayerStore from "../state-management/current-player/store";
 import useFilterQueryStore from "../state-management/filter-query/store";
+import useGamePlanStore from "../state-management/game-plan/store";
 import useUserHistoryStore from "../state-management/user-history/store";
 import { getRandomMatch } from "../utils/getRandomMatch";
 import { getRandomPlayer } from "../utils/getRandomPlayer";
-import useCurrentLineUp from "../state-management/current-lineup/store";
-import useGamePlanStore from "../state-management/game-plan/store";
+import { Formations } from "../entities/TransferMarkt/Formations";
 
 const apiClientGamePlan = new APIClient<GamePlan>("/matches/list-by-game-plan");
 
@@ -73,9 +73,9 @@ const usePlayerByGame = () => {
           setLineup(res);
           setRandomPlayer(
             getRandomPlayer(
-              res.formations[randomMatch?.bigTeamIsPlaying].start,
+              res.formations[randomMatch?.bigTeamIsPlaying as keyof Formations].start,
               playerGuessed,
-              res.coaches[randomMatch?.bigTeamIsPlaying]
+              res.coaches[randomMatch?.bigTeamIsPlaying as keyof Formations]
             )
           );
           return res;

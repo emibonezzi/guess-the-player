@@ -1,5 +1,4 @@
 import axios, { AxiosRequestConfig } from "axios";
-import { FetchResponseTeam } from "../entities/APIFootball/FetchResponseTeam";
 
 const axiosInstance = axios.create({
   baseURL: "https://transfermarket.p.rapidapi.com",

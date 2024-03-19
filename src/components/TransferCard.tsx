@@ -22,7 +22,7 @@ const TransferCard = ({ team, date, logo }: Props) => {
       </GridItem>
       <GridItem area="logo">
         <Image
-          h="40px"
+          h="48px"
           filter="drop-shadow(8px 8px 4px #0e1111)"
           objectFit="scale-down"
           src={logo}

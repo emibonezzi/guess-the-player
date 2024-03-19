@@ -1,14 +1,12 @@
-import { Badge, Box, Highlight, Slide, Text } from "@chakra-ui/react";
+import { Badge, Box } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { FaArrowAltCircleRight } from "react-icons/fa";
-import { motion } from "framer-motion";
 
 interface Props {
   slides: string[];
-  wordsToHighlight: string[] | undefined;
 }
 
-const Slideshow = ({ slides, wordsToHighlight }: Props) => {
+const Slideshow = ({ slides }: Props) => {
   const [currentSlide, setSlide] = useState(0);
 
   function nextSlide() {

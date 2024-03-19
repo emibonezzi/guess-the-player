@@ -1,5 +1,4 @@
 import { Box } from "@chakra-ui/react";
-import Hint from "./Hint";
 import useCurrentPlayerStore from "../state-management/current-player/store";
 import Slideshow from "./Slideshow";
 
@@ -17,14 +16,7 @@ const HintsGallery = () => {
   ];
   return (
     <Box display="flex" alignItems="center">
-      <Slideshow
-        wordsToHighlight={[
-          playerPosition,
-          playerWasCoachedBy,
-          playerPlayedWith,
-        ]}
-        slides={playerHints}
-      />
+      <Slideshow slides={playerHints} />
     </Box>
   );
 };

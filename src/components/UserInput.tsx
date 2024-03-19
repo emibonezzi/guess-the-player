@@ -12,6 +12,7 @@ import {
   ModalHeader,
   ModalOverlay,
   Spinner,
+  Text,
   useDisclosure,
 } from "@chakra-ui/react";
 import { useRef } from "react";
@@ -36,7 +37,7 @@ const UserInput = () => {
       gap={5}
     >
       <form
-        onSubmit={(e) => {
+        onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
           e.preventDefault();
           if (ref.current) {
             if (ref.current.value) {
@@ -44,7 +45,7 @@ const UserInput = () => {
               setSearchText(ref.current.value);
             }
           }
-          e.target.reset();
+          e.currentTarget.reset();
         }}
       >
         <Modal isOpen={isOpen} onClose={onClose}>
@@ -56,6 +57,12 @@ const UserInput = () => {
               <Box gap={5} display="flex" flexDirection="column">
                 {isLoadingResults && <Spinner />}
                 {searchError && <p>Error in searching player</p>}
+                {results && results?.count.players < 1 && (
+                  <Text>
+                    No results, try search for just few letters of the player's
+                    name!
+                  </Text>
+                )}
                 {results && results.count.players > 1
                   ? results?.players.map((item) => (
                       <PlayerCard

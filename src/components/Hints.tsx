@@ -1,19 +1,5 @@
-import {
-  Box,
-  Link,
-  Popover,
-  PopoverArrow,
-  PopoverBody,
-  PopoverCloseButton,
-  PopoverContent,
-  PopoverTrigger,
-  Portal,
-  useDisclosure,
-} from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import HintsPopover from "./HintsPopover";
-import { MdOutlineSos } from "react-icons/md";
-import HintsGallery from "./HintsGallery";
-import React, { useRef } from "react";
 
 const Hints = () => {
   return (
