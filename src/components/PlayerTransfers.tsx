@@ -20,10 +20,7 @@ const PlayerTransfers = () => {
   if (
     isLoadingPlayerTransferHistory ||
     isLoadingGamePlan ||
-    isLoadingMatchLineup ||
-    isFetchingGamePlan ||
-    isFetchingMatchLineup ||
-    isFetchingPlayerTransferHistory
+    isLoadingMatchLineup
   )
     return <LoadingSkeletons />;
 
