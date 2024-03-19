@@ -1,19 +1,33 @@
-import { create } from "zustand";
 import { mountStoreDevtool } from "simple-zustand-devtools";
+import create from "zustand-store-addons";
 import { GameLineUp } from "../../entities/TransferMarkt/GameLineUp";
+import { Lineup } from "../../entities/TransferMarkt/Lineup";
+import { PlayerFromLineup } from "../../entities/TransferMarkt/PlayerFromLineup";
 
 export interface CurrentLineUpStore {
   lineup: GameLineUp | null;
-  whereIsBigTeamPlaying: string;
-  setWhereIsBigTeamPlaying: (where: string) => void;
+  randomPlayer:
+    | {
+        player: PlayerFromLineup;
+        playerInLineup: Lineup;
+        teamWithOutPlayerId: PlayerFromLineup[];
+        coachName: string | undefined;
+      }
+    | undefined;
+  setRandomPlayer: (newRandomPlayer: {
+    player: PlayerFromLineup;
+    playerInLineup: Lineup;
+    teamWithOutPlayerId: PlayerFromLineup[];
+    coachName: string | undefined;
+  }) => void;
   setLineup: (lineup: GameLineUp) => void;
 }
 
 const useCurrentLineUp = create<CurrentLineUpStore>((set) => ({
   lineup: null,
-  whereIsBigTeamPlaying: "home",
-  setWhereIsBigTeamPlaying: (where) =>
-    set((store) => ({ ...store.lineup, whereIsBigTeamPlaying: where })),
+  randomPlayer: undefined,
+  setRandomPlayer: (newRandomPlayer) =>
+    set((store) => ({ randomPlayer: newRandomPlayer })),
   setLineup: (newLineUp) =>
     set((store) => ({
       lineup: newLineUp,

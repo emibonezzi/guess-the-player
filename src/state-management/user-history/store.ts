@@ -8,6 +8,7 @@ interface UserHistoryStore {
   playerNotGuessed: PlayerInDb[];
   setPlayerGuessed: (newPlayer: PlayerInDb) => void;
   setPlayerNotGuessed: (newPlayer: PlayerInDb) => void;
+  resetAll: () => void;
 }
 
 const useUserHistoryStore = create<UserHistoryStore>((set) => ({
@@ -17,6 +18,7 @@ const useUserHistoryStore = create<UserHistoryStore>((set) => ({
     set((store) => ({ playerGuessed: [...store.playerGuessed, player] })),
   setPlayerNotGuessed: (player) =>
     set((store) => ({ playerNotGuessed: [...store.playerNotGuessed, player] })),
+  resetAll: () => set((store) => ({ playerGuessed: [], playerNotGuessed: [] })),
 }));
 
 if (process.env.NODE_ENV === "development") {

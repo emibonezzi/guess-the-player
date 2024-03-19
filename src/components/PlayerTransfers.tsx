@@ -12,11 +12,10 @@ const PlayerTransfers = () => {
     playerTransferHistoryError,
   } = usePlayerByGame();
 
-  const { player } = useCurrentPlayerStore();
+  const player = useCurrentPlayerStore((s) => s.player);
 
   if (
     isLoadingPlayerTransferHistory ||
-    isLoadingGamePlan ||
     isLoadingGamePlan ||
     isLoadingMatchLineup
   )

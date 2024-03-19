@@ -1,7 +1,6 @@
 import {
   Box,
   Button,
-  Card,
   Input,
   InputGroup,
   InputLeftElement,
@@ -14,26 +13,19 @@ import {
   ModalOverlay,
   Spinner,
   useDisclosure,
-  useToast,
 } from "@chakra-ui/react";
 import { useRef } from "react";
+import { FaSearch } from "react-icons/fa";
 import useSearch from "../hooks/useSearch";
 import useUserAnswer from "../state-management/search-text/store";
-import getRandomSeason from "../utils/getRandomSeason";
-import getRandomTeamId from "../utils/getRandomTeamId";
 import PlayerCard from "./PlayerCard";
-import { FaSearch } from "react-icons/fa";
 
 const UserInput = () => {
-  const { text, setSearchText, resetText } = useUserAnswer();
+  const { text, setSearchText } = useUserAnswer();
   const { results, isLoadingResults, searchError } = useSearch(text);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const ref = useRef<HTMLInputElement>(null);
-  const toast = useToast();
-
-  const { randomTeamId } = getRandomTeamId();
-  const { randomSeason } = getRandomSeason();
 
   return (
     <Box
@@ -65,18 +57,16 @@ const UserInput = () => {
                 {isLoadingResults && <Spinner />}
                 {searchError && <p>Error in searching player</p>}
                 {results && results.count.players > 1
-                  ? results?.players
-                      .slice(0, 5)
-                      .map((item) => (
-                        <PlayerCard
-                          key={item.id}
-                          onClosePlayerSearch={onClose}
-                          name={item.playerName}
-                          image={item.playerImage}
-                          countryImage={item.nationImage}
-                          playerId={item.id}
-                        />
-                      ))
+                  ? results?.players.map((item) => (
+                      <PlayerCard
+                        key={item.id}
+                        onClosePlayerSearch={onClose}
+                        name={item.playerName}
+                        image={item.playerImage}
+                        countryImage={item.nationImage}
+                        playerId={item.id}
+                      />
+                    ))
                   : null}
               </Box>
             </ModalBody>

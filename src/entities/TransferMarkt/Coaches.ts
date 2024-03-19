@@ -1,8 +1,5 @@
 export interface Coaches {
-  home: {
-    name: string | undefined;
-  };
-  away: {
+  [type: string]: {
     name: string | undefined;
   };
 }

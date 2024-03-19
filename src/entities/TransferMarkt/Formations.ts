@@ -1,10 +1,10 @@
 import { Lineup } from "./Lineup";
+import { Player } from "./Player";
+import { PlayerFromLineup } from "./PlayerFromLineup";
 
 export interface Formations {
-  home: {
+  [type: string]: {
     start: Lineup;
-  };
-  away: {
-    start: Lineup;
+    bank: PlayerFromLineup[];
   };
 }

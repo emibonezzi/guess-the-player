@@ -3,6 +3,7 @@ import "./App.css";
 import PlayerTransfers from "./components/PlayerTransfers";
 import UserInput from "./components/UserInput";
 import NavBar from "./components/NavBar";
+import ModalOnAnswer from "./components/ModalOnAnswer";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       display="flex"
       alignItems="center"
     >
+      <ModalOnAnswer />
       <NavBar />
       <PlayerTransfers />
       <UserInput />

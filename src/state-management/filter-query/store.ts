@@ -13,7 +13,10 @@ const seasons = [
 ];
 
 const teamsAndLeagues = [
-  { leagueId: "IT1", teams: ["46", "12", "5", "6195", "506", "398"] },
+  {
+    leagueId: "IT1",
+    teams: ["46", "12", "5", "6195", "506", "398", "800", "252", "410", "430"],
+  },
   { leagueId: "GB1", teams: ["11", "631", "31", "281"] },
   { leagueId: "ES1", teams: ["131", "418"] },
 ];
