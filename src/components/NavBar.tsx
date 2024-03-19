@@ -3,9 +3,11 @@ import { FaHome } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import Hints from "./Hints";
 import Points from "./Points";
+import useCurrentPlayerStore from "../state-management/current-player/store";
 
 const NavBar = () => {
   const navigate = useNavigate();
+  const { setGameOver } = useCurrentPlayerStore();
   return (
     <Box
       boxShadow="xl"
@@ -17,7 +19,13 @@ const NavBar = () => {
       justifyContent="space-between"
       alignItems="center"
     >
-      <FaHome onClick={() => navigate("/")} fontSize="25px" />
+      <FaHome
+        onClick={() => {
+          setGameOver(true);
+          navigate("/");
+        }}
+        fontSize="25px"
+      />
       <Points />
       <Hints />
     </Box>
