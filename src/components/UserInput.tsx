@@ -30,7 +30,7 @@ const UserInput = () => {
 
   return (
     <Box
-      mt={5}
+      mt={2}
       display="flex"
       flexDirection="column"
       justifyContent="center"
