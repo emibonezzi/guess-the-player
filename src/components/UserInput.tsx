@@ -100,7 +100,7 @@ const UserInput = () => {
               <Input
                 w="250px"
                 ref={ref}
-                placeholder="Search player..."
+                placeholder="Guess the player..."
                 fontWeight="700"
               ></Input>
             </InputGroup>
