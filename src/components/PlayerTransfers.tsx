@@ -7,7 +7,7 @@ import TransferCard from "./TransferCard";
 const PlayerTransfers = () => {
   const { player, isFetching, allData } = usePlayer();
 
-  if (isFetching || allData.some((item) => item.isFetching))
+  if (isFetching || allData.every((item) => item.isFetching))
     return <LoadingSkeletons />;
 
   return (
