@@ -5,21 +5,21 @@ import LoadingSkeletons from "./LoadingSkeletons";
 import TransferCard from "./TransferCard";
 
 const PlayerTransfers = () => {
-  const {
+  /* const {
     isLoadingGamePlan,
     isLoadingMatchLineup,
     isLoadingPlayerTransferHistory,
     playerTransferHistoryError,
-  } = usePlayerByGame();
+  } = usePlayerByGame(); */
 
-  const player = useCurrentPlayerStore((s) => s.player);
+  /* const player = useCurrentPlayerStore((s) => s.player);
 
   if (
     isLoadingPlayerTransferHistory ||
     isLoadingGamePlan ||
     isLoadingMatchLineup
   )
-    return <LoadingSkeletons />;
+    return <LoadingSkeletons />; */
 
   return (
     <Box display="flex" flexDirection="column" gap={3}>
@@ -34,7 +34,7 @@ const PlayerTransfers = () => {
         /*         flexFlow="column wrap" */
         gap={2}
       >
-        {playerTransferHistoryError && (
+        {/* {playerTransferHistoryError && (
           <p>{playerTransferHistoryError.message}</p>
         )}
         {player?.transferHistory
@@ -56,7 +56,7 @@ const PlayerTransfers = () => {
                 }
               />
             );
-          })}
+          })} */}
       </Box>
       <Divider />
     </Box>

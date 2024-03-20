@@ -1,9 +1,9 @@
 import axios, { AxiosRequestConfig } from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "https://transfermarket.p.rapidapi.com",
+  baseURL: "https://transfermarkt-db.p.rapidapi.com/v1",
   headers: {
-    "x-rapidapi-host": "transfermarket.p.rapidapi.com",
+    "x-rapidapi-host": "transfermarkt-db.p.rapidapi.com",
     "x-rapidapi-key": import.meta.env.VITE_API_KEY,
   },
 });

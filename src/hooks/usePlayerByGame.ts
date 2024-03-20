@@ -21,7 +21,6 @@ const apiClientTransferHistory = new APIClient<TransferHistory>(
 );
 
 const usePlayerByGame = () => {
-  console.log("usePlayerByGame hook invoked");
   const { filterQuery } = useFilterQueryStore();
   const { setPlayer } = useCurrentPlayerStore();
   const { playerGuessed } = useUserHistoryStore();

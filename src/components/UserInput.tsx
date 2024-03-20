@@ -22,8 +22,8 @@ import useUserAnswer from "../state-management/search-text/store";
 import PlayerCard from "./PlayerCard";
 
 const UserInput = () => {
-  const { text, setSearchText } = useUserAnswer();
-  const { results, isLoadingResults, searchError } = useSearch(text);
+  /* const { text, setSearchText } = useUserAnswer();
+  const { results, isLoadingResults, searchError } = useSearch(text); */
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const ref = useRef<HTMLInputElement>(null);
@@ -40,23 +40,23 @@ const UserInput = () => {
       <form
         onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
           e.preventDefault();
-          if (ref.current) {
+          /* if (ref.current) {
             if (ref.current.value) {
               onOpen();
               setSearchText(ref.current.value);
             }
-          }
+          } */
           e.currentTarget.reset();
         }}
       >
         <Modal isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
           <ModalContent m={5} boxSize="500px" overflowY="scroll">
-            <ModalHeader>Results for "{text}"</ModalHeader>
+            <ModalHeader>{/* Results for "{text}" */}</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
               <Box gap={5} display="flex" flexDirection="column">
-                {isLoadingResults && <Spinner />}
+                {/* {isLoadingResults && <Spinner />}
                 {searchError && <p>Error in searching player</p>}
                 {results && results?.count.players < 1 && (
                   <Text>
@@ -75,7 +75,7 @@ const UserInput = () => {
                         playerId={item.id}
                       />
                     ))
-                  : null}
+                  : null} */}
               </Box>
             </ModalBody>
 
