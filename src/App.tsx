@@ -4,14 +4,8 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import PlayerTransfers from "./components/PlayerTransfers";
 import UserInput from "./components/UserInput";
-import usePlayer from "./hooks/usePlayer";
-import { all } from "axios";
 
 function App() {
-  const { randomPlayer } = usePlayer();
-
-  console.log(randomPlayer);
-
   return (
     <motion.div
       initial={{ scale: 0 }}

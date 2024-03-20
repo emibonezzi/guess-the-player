@@ -6,9 +6,11 @@ import { motion } from "framer-motion";
 import { FaQuestion } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/logoGTP.png";
+import usePlayer from "../hooks/usePlayer";
 
 const Homepage = () => {
   const navigate = useNavigate();
+  const { refetch } = usePlayer();
 
   return (
     <Box
@@ -59,6 +61,7 @@ const Homepage = () => {
         </Box>
         <Button
           onClick={() => {
+            refetch();
             navigate("/game");
           }}
           w="100px"

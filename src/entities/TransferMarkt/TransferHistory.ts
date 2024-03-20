@@ -1,5 +1,5 @@
 import { Transfer } from "./Transfer";
 
 export interface TransferHistory {
-  transferHistory: Transfer[];
+  data: { transferHistory: Transfer[] };
 }

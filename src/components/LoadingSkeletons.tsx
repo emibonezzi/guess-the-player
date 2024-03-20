@@ -1,20 +1,24 @@
-import { Box } from "@chakra-ui/react";
-import BarLoader from "react-spinners/ClipLoader";
-
+import { Box, Divider, Heading } from "@chakra-ui/react";
+import { MagnifyingGlass } from "react-loader-spinner";
 const LoadingSkeletons = () => {
   return (
     <Box display="flex" flexDirection="column" gap={3}>
+      <Divider />
       <Box
         boxShadow="xl"
-        maxH="400px"
-        display="flex"
+        w="100%"
+        h="400px"
+        display="flex"/*  */
         flexDirection="column"
         borderWidth="1px"
-        p={5}
+        alignItems="center"
+        justifyContent="center"
+        p={5} /*  */
         borderRadius="md"
         gap={2}
       >
-        <BarLoader color="grey.700" />
+        <MagnifyingGlass glassColor="grey" color="white" />
+        <Heading fontSize="20px">Looking for players...</Heading>
         {/* <LoadingSkeleton />
         <LoadingSkeleton />
         <LoadingSkeleton />
@@ -22,6 +26,7 @@ const LoadingSkeletons = () => {
         <LoadingSkeleton />
         <LoadingSkeleton /> */}
       </Box>
+      <Divider />
     </Box>
   );
 };

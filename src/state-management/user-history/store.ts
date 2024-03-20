@@ -5,6 +5,8 @@ import { PlayerInDb } from "../../entities/TransferMarkt/PlayerInDb";
 interface UserHistoryStore {
   playerGuessed: PlayerInDb[];
   playerNotGuessed: PlayerInDb[];
+  questionToggle: boolean;
+  setQuestionToggle: () => void;
   setPlayerGuessed: (newPlayer: PlayerInDb) => void;
   setPlayerNotGuessed: (newPlayer: PlayerInDb) => void;
   resetAll: () => void;
@@ -13,6 +15,9 @@ interface UserHistoryStore {
 const useUserHistoryStore = create<UserHistoryStore>((set) => ({
   playerGuessed: [],
   playerNotGuessed: [],
+  questionToggle: false,
+  setQuestionToggle: () =>
+    set((store) => ({ questionToggle: !store.questionToggle })),
   setPlayerGuessed: (player) =>
     set((store) => ({ playerGuessed: [...store.playerGuessed, player] })),
   setPlayerNotGuessed: (player) =>

@@ -1,6 +1,7 @@
 import { Badge, Grid, GridItem, Image, Link, useToast } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
+import usePlayer from "../hooks/usePlayer";
 import useCurrentPlayerStore from "../state-management/current-player/store";
-import useFilterQueryStore from "../state-management/filter-query/store";
 import useSearchText from "../state-management/search-text/store";
 import useUserHistoryStore from "../state-management/user-history/store";
 
@@ -19,18 +20,20 @@ const PlayerCard = ({
   onClosePlayerSearch,
   playerId,
 }: Props) => {
-  const { setFilterQuery } = useFilterQueryStore();
-  const { player, setGameOver } = useCurrentPlayerStore();
+  const { player } = usePlayer();
+  const { setGameOver } = useCurrentPlayerStore();
   const { resetText } = useSearchText();
-  const { setPlayerGuessed, setPlayerNotGuessed } = useUserHistoryStore();
+  const { setPlayerGuessed, setQuestionToggle, resetAll } =
+    useUserHistoryStore();
   const toast = useToast();
+  const navigate = useNavigate();
   return (
     <Link
       onClick={() => {
-        if (player?.id === playerId) {
+        if (player?.data.transferHistory[0].playerID === playerId) {
           setPlayerGuessed({
-            id: player.id,
-            name: player.name,
+            id: player?.data.transferHistory[0].playerID,
+            name: player?.data.transferHistory[0].playerName,
           });
           toast({
             title: "Correct!",
@@ -38,13 +41,17 @@ const PlayerCard = ({
             status: "success",
             duration: 1500,
           });
-          setFilterQuery();
+          setQuestionToggle();
         } else {
-          setGameOver(true);
-          setPlayerNotGuessed({
-            id: player?.id,
-            name: player?.name,
+          toast({
+            title: "Oh no!",
+            description: "Wrong player 😔",
+            status: "error",
+            duration: 1500,
           });
+          resetAll();
+          setGameOver(true);
+          navigate("/");
         }
         resetText();
         onClosePlayerSearch();

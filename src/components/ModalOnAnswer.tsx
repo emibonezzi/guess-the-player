@@ -14,14 +14,12 @@ import {
 } from "@chakra-ui/react";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import useCurrentPlayerStore from "../state-management/current-player/store";
-import useFilterQueryStore from "../state-management/filter-query/store";
 import useUserHistoryStore from "../state-management/user-history/store";
 
 const ModalOnAnswer = () => {
   const { gameOver, setGameOver } = useCurrentPlayerStore();
   const { onClose } = useDisclosure();
   const { playerGuessed, resetAll } = useUserHistoryStore();
-  const { setFilterQuery } = useFilterQueryStore();
 
   let shareOnSocialString =
     "I guessed the following players by their transfer history! Can you beat my streak?\n\n";
@@ -106,7 +104,6 @@ const ModalOnAnswer = () => {
               onClick={() => {
                 setGameOver(false);
                 resetAll();
-                setFilterQuery();
               }}
             >
               Play again!

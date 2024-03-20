@@ -1,6 +1,6 @@
 import { Box, Heading } from "@chakra-ui/react";
-import useUserHistoryStore from "../state-management/user-history/store";
 import { TiStarFullOutline } from "react-icons/ti";
+import useUserHistoryStore from "../state-management/user-history/store";
 
 const Points = () => {
   const { playerGuessed } = useUserHistoryStore();
