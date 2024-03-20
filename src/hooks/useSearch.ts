@@ -8,6 +8,24 @@ const apiClientSearchText = new APIClient<Search>("/search/quick-search");
 
 const useSearch = () => {
   const { text } = useSearchText();
+  /* const pages = [0, 1, 2, 3, 4];
+
+  const allResults = useQueries({
+    queries: pages.map((n) => ({
+      queryKey: ["resultPage", n],
+      queryFn: () =>
+        apiClientSearchText.getAll({
+          params: {
+            query: text,
+            locale: "COM",
+            page_number: n,
+          },
+        }),
+      staleTime: ms("1h"),
+      retry: 0,
+      refetchOnWindowFocus: false,
+    })),
+  }); */
 
   const {
     data: results,
@@ -27,6 +45,12 @@ const useSearch = () => {
     retry: 0,
     refetchOnWindowFocus: false,
   });
+
+  /*   const resultsCleaned = allResults
+    .map((item) => item.data?.data.players)
+    .flat();
+
+  console.log(allResults); */
 
   return { results, isLoadingResults, searchError, refetch };
 };

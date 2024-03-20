@@ -93,7 +93,7 @@ const ModalOnAnswer = () => {
                 target="_blank"
                 href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
                   shareOnSocialString + "\n#GuessThePlayer\n\n"
-                )}&via=letemicode&url=https://guess-the-player-rouge.vercel.app`}
+                )}&via=letemicode&url=https://guess-the-player-nine.vercel.app`}
               >
                 <FaSquareXTwitter />
               </Link>
