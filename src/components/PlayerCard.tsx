@@ -23,8 +23,7 @@ const PlayerCard = ({
   const { player } = usePlayer();
   const { setGameOver } = useCurrentPlayerStore();
   const { resetText } = useSearchText();
-  const { setPlayerGuessed, setQuestionToggle, resetAll } =
-    useUserHistoryStore();
+  const { setPlayerGuessed, setQuestionToggle } = useUserHistoryStore();
   const toast = useToast();
   const navigate = useNavigate();
   return (
