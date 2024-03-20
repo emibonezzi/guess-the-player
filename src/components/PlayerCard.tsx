@@ -49,7 +49,6 @@ const PlayerCard = ({
             status: "error",
             duration: 1500,
           });
-          resetAll();
           setGameOver(true);
           navigate("/");
         }
