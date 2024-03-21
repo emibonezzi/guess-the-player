@@ -7,7 +7,7 @@ const apiClientSearchText = new APIClientSearch<Search>("/search");
 
 const useSearch = () => {
   const { text } = useSearchText();
-  const pages = ["1", "2", "3", "4", "5"];
+  const pages = ["1", "2", "3"];
 
   const allResults = useQueries({
     queries: pages.map((n) => ({

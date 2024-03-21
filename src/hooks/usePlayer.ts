@@ -6,6 +6,7 @@ import { TransferHistory } from "../entities/TransferMarkt/TransferHistory";
 import APIClient from "../services/api-client";
 import useUserHistoryStore from "../state-management/user-history/store";
 import getRandomItem from "../utils/getRandomItem";
+import useCurrentPlayerStore from "../state-management/current-player/store";
 
 const apiClientSquad = new APIClient<Squad>("/clubs/squad");
 
@@ -16,6 +17,7 @@ const apiClientTransferHistory = new APIClient<TransferHistory>(
 const usePlayer = () => {
   const { questionToggle } = useUserHistoryStore();
   const { playerGuessed } = useUserHistoryStore();
+  const { setNationality, setPosition } = useCurrentPlayerStore();
 
   // get multiple squads from random season and assemble list of players ID
   const allData = useQueries({
@@ -60,12 +62,23 @@ const usePlayer = () => {
   } = useQuery({
     queryKey: ["player", questionToggle],
     queryFn: () =>
-      apiClientTransferHistory.getAll({
-        params: {
-          locale: "COM",
-          player_id: randomPlayer?.id,
-        },
-      }),
+      apiClientTransferHistory
+        .getAll({
+          params: {
+            locale: "COM",
+            player_id: randomPlayer?.id,
+          },
+        })
+        .then((res) => {
+          setNationality(res.data.transferHistory[0].countryImage);
+          setPosition(
+            allPlayersFiltered.find(
+              (playerInSquad) =>
+                playerInSquad?.id === res.data.transferHistory[0].playerID
+            )?.positions.first.name
+          );
+          return res;
+        }),
     enabled: !!randomPlayer,
     refetchOnWindowFocus: false,
     refetchOnMount: false,

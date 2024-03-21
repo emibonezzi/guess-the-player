@@ -4,6 +4,10 @@ import { PlayerComplete } from "../../entities/TransferMarkt/PlayerComplete";
 
 interface CurrentPlayerStore {
   player: PlayerComplete | null;
+  position: string | undefined;
+  setPosition: (position: string | undefined) => void;
+  nationality: string | undefined;
+  setNationality: (nationality: string | undefined) => void;
   gameOver: boolean;
   setGameOver: (status: boolean) => void;
   setPlayer: (player: PlayerComplete) => void;
@@ -12,6 +16,10 @@ interface CurrentPlayerStore {
 const useCurrentPlayerStore = create<CurrentPlayerStore>((set) => ({
   player: null,
   gameOver: false,
+  position: undefined,
+  setPosition: (position) => set(() => ({ position: position })),
+  nationality: undefined,
+  setNationality: (nationality) => set(() => ({ nationality: nationality })),
   setGameOver: (status) =>
     set((store) => {
       return { ...store, gameOver: status };

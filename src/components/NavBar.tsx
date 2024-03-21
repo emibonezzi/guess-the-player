@@ -1,12 +1,13 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Image, Text } from "@chakra-ui/react";
 import { FaHome } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import useCurrentPlayerStore from "../state-management/current-player/store";
 import Points from "./Points";
+import { motion } from "framer-motion";
 
 const NavBar = () => {
   const navigate = useNavigate();
-  const { setGameOver } = useCurrentPlayerStore();
+  const { setGameOver, nationality, position } = useCurrentPlayerStore();
 
   return (
     <Box
@@ -27,14 +28,12 @@ const NavBar = () => {
         }}
         fontSize="25px"
       />
-      {/*       <Text m={0}>
-        {
-          allPlayersFiltered.find(
-            (playerInSquad) =>
-              playerInSquad?.id === player?.data.transferHistory[0].playerID
-          )?.positions.first.name
-        }
-      </Text> */}
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+        <Box display="flex" gap={2} alignItems="center">
+          <Image objectFit="contain" src={nationality}></Image>
+          <Text m={0}>{position}</Text>
+        </Box>
+      </motion.div>
       <Points />
     </Box>
   );
