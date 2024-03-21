@@ -1,5 +1,4 @@
-import { useQueries, useQuery } from "@tanstack/react-query";
-import ms from "ms";
+import { useQueries } from "@tanstack/react-query";
 import { Search } from "../entities/TransferMarkt/Search";
 import APIClientSearch from "../services/api-client-search";
 import useSearchText from "../state-management/search-text/store";

@@ -6,7 +6,6 @@ import { TransferHistory } from "../entities/TransferMarkt/TransferHistory";
 import APIClient from "../services/api-client";
 import useUserHistoryStore from "../state-management/user-history/store";
 import getRandomItem from "../utils/getRandomItem";
-import useCurrentPlayerStore from "../state-management/current-player/store";
 
 const apiClientSquad = new APIClient<Squad>("/clubs/squad");
 
@@ -17,7 +16,6 @@ const apiClientTransferHistory = new APIClient<TransferHistory>(
 const usePlayer = () => {
   const { questionToggle } = useUserHistoryStore();
   const { playerGuessed } = useUserHistoryStore();
-  const { gameOver } = useCurrentPlayerStore();
 
   // get multiple squads from random season and assemble list of players ID
   const allData = useQueries({

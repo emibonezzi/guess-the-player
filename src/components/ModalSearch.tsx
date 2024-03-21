@@ -21,7 +21,7 @@ interface Props {
   onClose: () => void;
 }
 
-const ModalSearch = ({ isOpen, onClose, onOpen }: Props) => {
+const ModalSearch = ({ isOpen, onClose }: Props) => {
   const { text } = useSearchText();
   const { resultsCleaned, allResults } = useSearch();
 

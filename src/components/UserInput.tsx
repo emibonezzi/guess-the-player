@@ -7,14 +7,12 @@ import {
 } from "@chakra-ui/react";
 import { useRef } from "react";
 import { FaSearch } from "react-icons/fa";
-import ModalSearch from "./ModalSearch";
 import useSearchText from "../state-management/search-text/store";
-import useSearch from "../hooks/useSearch";
+import ModalSearch from "./ModalSearch";
 
 const UserInput = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { setSearchText } = useSearchText();
-  const { allResults } = useSearch();
   const ref = useRef<HTMLInputElement>(null);
 
   return (
