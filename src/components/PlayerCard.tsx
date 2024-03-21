@@ -57,7 +57,7 @@ const PlayerCard = ({
     >
       <Grid
         boxShadow="xl"
-        p={8}
+        p={2}
         gridTemplateAreas={`"image playerInfo"`}
         templateColumns="50% 50%"
       >

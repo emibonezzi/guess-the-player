@@ -52,7 +52,7 @@ const ModalSearch = ({ isOpen, onClose }: Props) => {
         <ModalHeader>Results for "{text}"</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
-          <Box gap={10} display="flex" flexDirection="column">
+          <Box mt={10} gap={10} display="flex" flexDirection="column">
             {allResults.some((item) => item.isError) && (
               <p>Error in searching player</p>
             )}
