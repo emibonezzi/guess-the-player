@@ -48,11 +48,11 @@ const ModalSearch = ({ isOpen, onClose }: Props) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
-      <ModalContent m={5} boxSize="500px" overflowY="scroll">
+      <ModalContent m={5} h="800px" overflowY="scroll">
         <ModalHeader>Results for "{text}"</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
-          <Box gap={5} display="flex" flexDirection="column">
+          <Box gap={10} display="flex" flexDirection="column">
             {allResults.some((item) => item.isError) && (
               <p>Error in searching player</p>
             )}

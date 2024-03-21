@@ -57,7 +57,7 @@ const PlayerCard = ({
     >
       <Grid
         boxShadow="xl"
-        p={5}
+        p={8}
         gridTemplateAreas={`"image playerInfo"`}
         templateColumns="50% 50%"
       >
@@ -71,7 +71,7 @@ const PlayerCard = ({
           gap={2}
           area="playerInfo"
         >
-          <Badge w={"max-content"} fontSize={{ base: "10px", lg: "13px" }}>
+          <Badge w={"max-content"} fontSize={{ base: "11px", lg: "13px" }}>
             {name}
           </Badge>
           <Image w="15px" h="15px" objectFit="contain" src={countryImage} />
