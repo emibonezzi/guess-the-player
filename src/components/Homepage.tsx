@@ -14,7 +14,7 @@ const Homepage = () => {
 
   return (
     <Box
-      h="100vh"
+      mt="200px"
       display="flex"
       flexDirection="column"
       alignItems="center"
