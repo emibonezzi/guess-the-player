@@ -3,11 +3,12 @@ import { motion } from "framer-motion";
 import usePlayer from "../hooks/usePlayer";
 import LoadingSkeletons from "./LoadingSkeletons";
 import TransferCard from "./TransferCard";
+import { useEffect } from "react";
 
 const PlayerTransfers = () => {
   const { player, isFetching, allData } = usePlayer();
 
-  if (isFetching || allData.every((item) => item.isFetching))
+  if (isFetching || allData.some((item) => item.isFetching))
     return <LoadingSkeletons />;
 
   return (

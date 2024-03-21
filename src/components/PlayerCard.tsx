@@ -6,11 +6,11 @@ import useSearchText from "../state-management/search-text/store";
 import useUserHistoryStore from "../state-management/user-history/store";
 
 interface Props {
-  name: string;
-  image: string;
-  countryImage: string;
+  name: string | undefined;
+  image: string | undefined;
+  countryImage: string | undefined;
   onClosePlayerSearch: () => void;
-  playerId: string;
+  playerId: string | undefined;
 }
 
 const PlayerCard = ({

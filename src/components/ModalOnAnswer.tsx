@@ -19,7 +19,7 @@ import useUserHistoryStore from "../state-management/user-history/store";
 const ModalOnAnswer = () => {
   const { gameOver, setGameOver } = useCurrentPlayerStore();
   const { onClose } = useDisclosure();
-  const { playerGuessed, resetAll } = useUserHistoryStore();
+  const { playerGuessed, resetAll, setQuestionToggle } = useUserHistoryStore();
 
   let shareOnSocialString =
     "I guessed the following players by their transfer history! Can you beat my streak?\n\n";

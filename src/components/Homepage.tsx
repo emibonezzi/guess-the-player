@@ -10,7 +10,7 @@ import usePlayer from "../hooks/usePlayer";
 
 const Homepage = () => {
   const navigate = useNavigate();
-  const { refetch } = usePlayer();
+  const { refetchPlayer } = usePlayer();
 
   return (
     <Box
@@ -36,7 +36,6 @@ const Homepage = () => {
           position="relative"
           boxShadow="xl"
           borderRadius={50}
-          border="1px"
           p={3}
         >
           <Box
@@ -61,7 +60,7 @@ const Homepage = () => {
         </Box>
         <Button
           onClick={() => {
-            refetch();
+            refetchPlayer();
             navigate("/game");
           }}
           w="100px"

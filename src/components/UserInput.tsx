@@ -1,31 +1,20 @@
 import {
   Box,
-  Button,
   Input,
   InputGroup,
   InputLeftElement,
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  ModalOverlay,
-  Text,
   useDisclosure,
 } from "@chakra-ui/react";
 import { useRef } from "react";
 import { FaSearch } from "react-icons/fa";
+import ModalSearch from "./ModalSearch";
+import useSearchText from "../state-management/search-text/store";
 import useSearch from "../hooks/useSearch";
-import useUserAnswer from "../state-management/search-text/store";
-import LoadingSkeletons from "./LoadingSkeletons";
-import PlayerCard from "./PlayerCard";
 
 const UserInput = () => {
-  const { text, setSearchText } = useUserAnswer();
-  const { results, isLoadingResults, searchError } = useSearch();
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+  const { setSearchText } = useSearchText();
+  const { allResults } = useSearch();
   const ref = useRef<HTMLInputElement>(null);
 
   return (
@@ -49,43 +38,7 @@ const UserInput = () => {
           e.currentTarget.reset();
         }}
       >
-        <Modal isOpen={isOpen} onClose={onClose}>
-          <ModalOverlay />
-          <ModalContent m={5} boxSize="500px" overflowY="scroll">
-            <ModalHeader>Results for "{text}"</ModalHeader>
-            <ModalCloseButton />
-            <ModalBody>
-              <Box gap={5} display="flex" flexDirection="column">
-                {isLoadingResults && <LoadingSkeletons />}
-                {searchError && <p>Error in searching player</p>}
-                {results && results?.data.count.players < 1 && (
-                  <Text>
-                    No results, try search for just few letters of the player's
-                    name!
-                  </Text>
-                )}
-                {results && results.data.count.players > 1
-                  ? results?.data.players.map((item) => (
-                      <PlayerCard
-                        key={item.id}
-                        onClosePlayerSearch={onClose}
-                        name={item.playerName}
-                        image={item.playerImage}
-                        countryImage={item.nationImage}
-                        playerId={item.id}
-                      />
-                    ))
-                  : null}
-              </Box>
-            </ModalBody>
-
-            <ModalFooter>
-              <Button colorScheme="blue" mr={3} onClick={onClose}>
-                Back
-              </Button>
-            </ModalFooter>
-          </ModalContent>
-        </Modal>
+        <ModalSearch isOpen={isOpen} onClose={onClose} onOpen={onOpen} />
         <Box
           display="flex"
           justifyContent="center"
