@@ -1,6 +1,5 @@
 import { Badge, Grid, GridItem, Heading, Image } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import usePlayer from "../hooks/usePlayer";
 import { teams } from "../data/teamsAndLeagues";
 
 interface Props {
@@ -11,8 +10,6 @@ interface Props {
 }
 
 const TransferCardPopover = ({ teamId, team, date, logo }: Props) => {
-  const { player } = usePlayer();
-
   return (
     <Grid
       gridTemplateAreas={`"date logo name"`}

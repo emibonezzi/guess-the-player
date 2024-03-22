@@ -1,9 +1,5 @@
-import { Badge, Box, Grid, GridItem, Heading, Image } from "@chakra-ui/react";
+import { Badge, Grid, GridItem, Heading, Image } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import usePlayer from "../hooks/usePlayer";
-import { styleTransferHistory } from "../utils/styleTransferHistory";
-import { TbDotsCircleHorizontal } from "react-icons/tb";
-import { TOO_MANY_TRANSFERS_PLACEHOLDER } from "./PlayerTransfers";
 
 interface Props {
   team: string | undefined;
@@ -12,13 +8,6 @@ interface Props {
 }
 
 const TransferCard = ({ team, date, logo }: Props) => {
-  const { player } = usePlayer();
-
-  const picSize =
-    styleTransferHistory(player?.data.transferHistory).length > 10
-      ? "28px"
-      : "40px";
-
   return (
     <Grid
       gridTemplateAreas={`"date logo name"`}

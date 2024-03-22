@@ -7,18 +7,15 @@ import {
   PopoverBody,
   PopoverCloseButton,
   PopoverContent,
-  PopoverHeader,
   PopoverTrigger,
 } from "@chakra-ui/react";
-import usePlayer from "../hooks/usePlayer";
-import { styleTransferHistory } from "../utils/styleTransferHistory";
 import { motion } from "framer-motion";
-import TransferCard from "./TransferCard";
+import usePlayer from "../hooks/usePlayer";
 import { styleDate } from "../utils/styleDate";
 import TransferCardPopover from "./TransferCardPopover";
 
 const ShowMoreTransfers = () => {
-  const { player, isFetching, allData } = usePlayer();
+  const { player } = usePlayer();
 
   return (
     <Box
