@@ -21,7 +21,7 @@ const usePlayer = () => {
 
   // get multiple squads from random season and assemble list of players ID
   const allData = useQueries({
-    queries: getRandomItem(teams).map((team) => ({
+    queries: teams.map((team) => ({
       queryKey: ["team", team],
       queryFn: () =>
         apiClientSquad.getAll({
