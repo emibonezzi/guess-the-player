@@ -1,5 +1,6 @@
-import { Badge, Grid, GridItem, Heading, Image } from "@chakra-ui/react";
+import { Badge, Box, Grid, GridItem, Heading, Image } from "@chakra-ui/react";
 import { motion } from "framer-motion";
+import { PiArrowElbowDownRightBold } from "react-icons/pi";
 
 interface Props {
   team: string | undefined;
@@ -20,9 +21,26 @@ const TransferCard = ({ team, date, logo }: Props) => {
       gap={2}
     >
       <GridItem area="date">
-        <Heading fontWeight={200} m={0} fontSize={{ base: "11px", lg: "15px" }}>
-          {date}
-        </Heading>
+        {date === "loan" ? (
+          <Box gap={2} display="flex" justifyContent="center">
+            <PiArrowElbowDownRightBold />
+            <Heading
+              fontWeight={200}
+              m={0}
+              fontSize={{ base: "11px", lg: "15px" }}
+            >
+              (loan)
+            </Heading>
+          </Box>
+        ) : (
+          <Heading
+            fontWeight={200}
+            m={0}
+            fontSize={{ base: "11px", lg: "15px" }}
+          >
+            {date}
+          </Heading>
+        )}
       </GridItem>
       <GridItem area="logo">
         <motion.div

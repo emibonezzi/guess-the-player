@@ -43,7 +43,9 @@ const usePlayer = () => {
 
   // filter players by market value to get relevant players
   const relevantPlayers = allPlayers.filter(
-    (player) => player?.marketValue.value!! > 20_000_000 || player?.age!! > 25
+    (player) =>
+      player?.marketValue.value!! > 20_000_000 ||
+      (player?.age!! > 25 && !player?.isGoalkeeper)
   );
 
   // filter out players already guessed by player

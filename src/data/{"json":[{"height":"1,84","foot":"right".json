@@ -1,0 +1,1795 @@
+{
+  "json": [
+    {
+      "height": "1,84",
+      "foot": "right",
+      "injury": null,
+      "suspension": null,
+      "joined": 1530655200,
+      "contractUntil": false,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "12518",
+      "name": "Silvio Proto",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/12518-1535015253.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": null,
+      "age": 36,
+      "dateOfBirth": 422488800,
+      "heroImage": null,
+      "isGoalkeeper": true,
+      "positions": {
+        "first": {
+          "id": "1",
+          "name": "Goalkeeper",
+          "shortName": "GK",
+          "group": "Goalkeeper"
+        },
+        "second": null,
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 19,
+          "name": "Belgium",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/19.png?lm=1520611569"
+        },
+        {
+          "id": 75,
+          "name": "Italy",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/75.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 325000,
+        "currency": "€",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,83",
+      "foot": "left",
+      "injury": null,
+      "suspension": null,
+      "joined": 1501624800,
+      "contractUntil": 1711133741,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "37834",
+      "name": "Felipe Caicedo",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/37834-1594277045.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": null,
+      "age": 30,
+      "dateOfBirth": 589413600,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/felipe-caicedo-inter-1646040983-81016.jpg?lm=1646040993",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "14",
+          "name": "Centre-Forward",
+          "shortName": "CF",
+          "group": "Striker"
+        },
+        "second": null,
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 44,
+          "name": "Ecuador",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/44.png?lm=1520611569"
+        },
+        {
+          "id": 157,
+          "name": "Spain",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/157.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 4800000,
+        "currency": "€",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,79",
+      "foot": "right",
+      "injury": null,
+      "suspension": null,
+      "joined": 1500328800,
+      "contractUntil": false,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "41414",
+      "name": "Lucas Leiva",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/41414-1620821429.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": null,
+      "age": 32,
+      "dateOfBirth": 537145200,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/lucas-leiva-gremio-2022-1671005924-98486.jpg?lm=1671005937",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "6",
+          "name": "Defensive Midfield",
+          "shortName": "DM",
+          "group": "Midfielder"
+        },
+        "second": {
+          "id": "7",
+          "name": "Central Midfield",
+          "shortName": "CM",
+          "group": "Midfielder"
+        },
+        "third": {
+          "id": "3",
+          "name": "Centre-Back",
+          "shortName": "CB",
+          "group": "Defender"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 26,
+          "name": "Brazil",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/26.png?lm=1520611569"
+        },
+        {
+          "id": 75,
+          "name": "Italy",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/75.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 6000000,
+        "currency": "€",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,83",
+      "foot": "left",
+      "injury": null,
+      "suspension": null,
+      "joined": 1214863200,
+      "contractUntil": false,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "44420",
+      "name": "Ștefan Radu",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/44420-1688474820.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "IMAGO",
+      "shirtNumber": null,
+      "age": 32,
+      "dateOfBirth": 530319600,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/stefan-radu-lazio-2022-23-1685353525-107995.jpg?lm=1685353541",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "4",
+          "name": "Left-Back",
+          "shortName": "LB",
+          "group": "Defender"
+        },
+        "second": {
+          "id": "3",
+          "name": "Centre-Back",
+          "shortName": "CB",
+          "group": "Defender"
+        },
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 140,
+          "name": "Romania",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/140.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 4000000,
+        "currency": "€",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,83",
+      "foot": "right",
+      "injury": null,
+      "suspension": null,
+      "joined": 1309471200,
+      "contractUntil": false,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "61449",
+      "name": "Senad Lulic",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/61449-1455552952.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "Getty Images",
+      "shirtNumber": null,
+      "age": 33,
+      "dateOfBirth": 506386800,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/senad-lulic-ss-lazio-1615883999-58825.jpg?lm=1615884012",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "9",
+          "name": "Left Midfield",
+          "shortName": "LM",
+          "group": "Midfielder"
+        },
+        "second": {
+          "id": "4",
+          "name": "Left-Back",
+          "shortName": "LB",
+          "group": "Defender"
+        },
+        "third": {
+          "id": "7",
+          "name": "Central Midfield",
+          "shortName": "CM",
+          "group": "Midfielder"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 24,
+          "name": "Bosnia-Herzegovina",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/24.png?lm=1569523290"
+        },
+        {
+          "id": 148,
+          "name": "Switzerland",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/148.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 2800000,
+        "currency": "€",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,84",
+      "foot": "right",
+      "injury": null,
+      "suspension": null,
+      "joined": 1404165600,
+      "contractUntil": false,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "84545",
+      "name": "Marco Parolo",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/84545-1448467664.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": null,
+      "age": 34,
+      "dateOfBirth": 475455600,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/marco-parolo-ss-lazio-1596022883-44425.jpg?lm=1596022850",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "7",
+          "name": "Central Midfield",
+          "shortName": "CM",
+          "group": "Midfielder"
+        },
+        "second": {
+          "id": "6",
+          "name": "Defensive Midfield",
+          "shortName": "DM",
+          "group": "Midfielder"
+        },
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 75,
+          "name": "Italy",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/75.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 1600000,
+        "currency": "€",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,85",
+      "foot": "right",
+      "injury": null,
+      "suspension": null,
+      "joined": 1469570400,
+      "contractUntil": 1782770400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "105521",
+      "name": "Ciro Immobile",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/105521-1682689697.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "IMAGO",
+      "shirtNumber": null,
+      "age": 29,
+      "dateOfBirth": 635468400,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/ciro-immobile-1414568619-2844.jpg?lm=1483605768",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "14",
+          "name": "Centre-Forward",
+          "shortName": "CF",
+          "group": "Striker"
+        },
+        "second": null,
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 75,
+          "name": "Italy",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/75.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 40000000,
+        "currency": "€",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,84",
+      "foot": "right",
+      "injury": null,
+      "suspension": null,
+      "joined": 1435701600,
+      "contractUntil": 1814306400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "126729",
+      "name": "Patric",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/126729-1695026786.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "IMAGO",
+      "shirtNumber": null,
+      "age": 26,
+      "dateOfBirth": 734997600,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/patric-lazio-2024-2324-1707128752-128486.jpg?lm=1707128773",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "3",
+          "name": "Centre-Back",
+          "shortName": "CB",
+          "group": "Defender"
+        },
+        "second": {
+          "id": "5",
+          "name": "Right-Back",
+          "shortName": "RB",
+          "group": "Defender"
+        },
+        "third": {
+          "id": "8",
+          "name": "Right Midfield",
+          "shortName": "RM",
+          "group": "Midfielder"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 157,
+          "name": "Spain",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/157.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 6500000,
+        "currency": "€",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,83",
+      "foot": "right",
+      "injury": null,
+      "suspension": null,
+      "joined": 1472594400,
+      "contractUntil": 1814306400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "128220",
+      "name": "Luis Alberto",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/128220-1695026651.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "IMAGO",
+      "shirtNumber": null,
+      "age": 26,
+      "dateOfBirth": 717634800,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/luis-alberto-lazio-2023-2324-1693317981-115282.jpg?lm=1693318010",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "7",
+          "name": "Central Midfield",
+          "shortName": "CM",
+          "group": "Midfielder"
+        },
+        "second": {
+          "id": "10",
+          "name": "Attacking Midfield",
+          "shortName": "AM",
+          "group": "Midfielder"
+        },
+        "third": {
+          "id": "13",
+          "name": "Second Striker",
+          "shortName": "SS",
+          "group": "Striker"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 157,
+          "name": "Spain",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/157.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 44000000,
+        "currency": "€",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,92",
+      "foot": "left",
+      "injury": null,
+      "suspension": null,
+      "joined": 1531260000,
+      "contractUntil": 1751234400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "131075",
+      "name": "Francesco Acerbi",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/131075-1663572709.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": null,
+      "age": 31,
+      "dateOfBirth": 571446000,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/francesco-acerbi-inter-2023-2324-1707130710-128523.jpg?lm=1707130726",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "3",
+          "name": "Centre-Back",
+          "shortName": "CB",
+          "group": "Defender"
+        },
+        "second": null,
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 75,
+          "name": "Italy",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/75.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 12000000,
+        "currency": "€",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,80",
+      "foot": "left",
+      "injury": null,
+      "suspension": null,
+      "joined": 1469138400,
+      "contractUntil": 1751234400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "140804",
+      "name": "Jordan Lukaku",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/140804-1474371465.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": null,
+      "age": 24,
+      "dateOfBirth": 775087200,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/jordan-lukaku-adanaspor-2024-1711019771-132339.jpg?lm=1711019784",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "4",
+          "name": "Left-Back",
+          "shortName": "LB",
+          "group": "Defender"
+        },
+        "second": {
+          "id": "9",
+          "name": "Left Midfield",
+          "shortName": "LM",
+          "group": "Midfielder"
+        },
+        "third": {
+          "id": "11",
+          "name": "Left Winger",
+          "shortName": "LW",
+          "group": "Striker"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 19,
+          "name": "Belgium",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/19.png?lm=1520611569"
+        },
+        {
+          "id": 193,
+          "name": "DR Congo",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/193.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 4000000,
+        "currency": "€",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,76",
+      "foot": "right",
+      "injury": null,
+      "suspension": null,
+      "joined": 1530568800,
+      "contractUntil": 1782770400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "145115",
+      "name": "Valon Berisha",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/145115-1639670806.png?lm=1",
+      "imageLarge": null,
+      "imageSource": "Stade de Reims",
+      "shirtNumber": null,
+      "age": 26,
+      "dateOfBirth": 729039600,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/valon-berisha-lask-2024-1708881808-130260.jpg?lm=1708881816",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "7",
+          "name": "Central Midfield",
+          "shortName": "CM",
+          "group": "Midfielder"
+        },
+        "second": {
+          "id": "9",
+          "name": "Left Midfield",
+          "shortName": "LM",
+          "group": "Midfielder"
+        },
+        "third": {
+          "id": "10",
+          "name": "Attacking Midfield",
+          "shortName": "AM",
+          "group": "Midfielder"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 244,
+          "name": "Kosovo",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/244.png?lm=1520611569"
+        },
+        {
+          "id": 125,
+          "name": "Norway",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/125.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 4000000,
+        "currency": "€",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,87",
+      "foot": "left",
+      "injury": null,
+      "suspension": null,
+      "joined": 1438034400,
+      "contractUntil": 1711133741,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "159026",
+      "name": "Ricardo Kishna",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/159026-1448468222.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": null,
+      "age": 24,
+      "dateOfBirth": 789174000,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/ricardo-kishna-ado-den-haag-1598968989-46522.jpg?lm=1598968972",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "11",
+          "name": "Left Winger",
+          "shortName": "LW",
+          "group": "Striker"
+        },
+        "second": {
+          "id": "12",
+          "name": "Right Winger",
+          "shortName": "RW",
+          "group": "Striker"
+        },
+        "third": {
+          "id": "10",
+          "name": "Attacking Midfield",
+          "shortName": "AM",
+          "group": "Midfielder"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 122,
+          "name": "Netherlands",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/122.png?lm=1520611569"
+        },
+        {
+          "id": 161,
+          "name": "Suriname",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/161.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 400000,
+        "currency": "€",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,80",
+      "foot": "right",
+      "injury": null,
+      "suspension": null,
+      "joined": 1471384800,
+      "contractUntil": 1735599600,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "195810",
+      "name": "Bastos",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/195810-1633193060.png?lm=1",
+      "imageLarge": null,
+      "imageSource": "www.fc-rostov.ru",
+      "shirtNumber": null,
+      "age": 28,
+      "dateOfBirth": 670028400,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/bastos-rostov-1631726832-71154.jpg?lm=1631726852",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "3",
+          "name": "Centre-Back",
+          "shortName": "CB",
+          "group": "Defender"
+        },
+        "second": null,
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 6,
+          "name": "Angola",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/6.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 3200000,
+        "currency": "€",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,80",
+      "foot": "right",
+      "injury": null,
+      "suspension": null,
+      "joined": 1372629600,
+      "contractUntil": 1814306400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "199733",
+      "name": "Danilo Cataldi",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/199733-1661513736.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": null,
+      "age": 24,
+      "dateOfBirth": 776124000,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/danilo-cataldi-lazio-2024-2324-1707815789-129184.jpg?lm=1707815805",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "6",
+          "name": "Defensive Midfield",
+          "shortName": "DM",
+          "group": "Midfielder"
+        },
+        "second": {
+          "id": "10",
+          "name": "Attacking Midfield",
+          "shortName": "AM",
+          "group": "Midfielder"
+        },
+        "third": {
+          "id": "7",
+          "name": "Central Midfield",
+          "shortName": "CM",
+          "group": "Midfielder"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 75,
+          "name": "Italy",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/75.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 3200000,
+        "currency": "€",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,78",
+      "foot": "right",
+      "injury": null,
+      "suspension": null,
+      "joined": 1533247200,
+      "contractUntil": false,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "215089",
+      "name": "Djavan Anderson",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/215089-1656583094.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": null,
+      "age": 24,
+      "dateOfBirth": 798415200,
+      "heroImage": null,
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "5",
+          "name": "Right-Back",
+          "shortName": "RB",
+          "group": "Defender"
+        },
+        "second": {
+          "id": "8",
+          "name": "Right Midfield",
+          "shortName": "RM",
+          "group": "Midfielder"
+        },
+        "third": {
+          "id": "6",
+          "name": "Defensive Midfield",
+          "shortName": "DM",
+          "group": "Midfielder"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 161,
+          "name": "Suriname",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/161.png?lm=1520611569"
+        },
+        {
+          "id": 122,
+          "name": "Netherlands",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/122.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 300000,
+        "currency": "€",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,93",
+      "foot": "right",
+      "injury": null,
+      "suspension": null,
+      "joined": 1359586800,
+      "contractUntil": 1782770400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "222209",
+      "name": "Thomas Strakosha",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/222209-1594713885.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": null,
+      "age": 24,
+      "dateOfBirth": 795567600,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/thomas-strakosha-ss-lazio-1594714008-43443.jpg?lm=1594714040",
+      "isGoalkeeper": true,
+      "positions": {
+        "first": {
+          "id": "1",
+          "name": "Goalkeeper",
+          "shortName": "GK",
+          "group": "Goalkeeper"
+        },
+        "second": null,
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 3,
+          "name": "Albania",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/3.png?lm=1520611569"
+        },
+        {
+          "id": 56,
+          "name": "Greece",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/56.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 20000000,
+        "currency": "€",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,89",
+      "foot": "right",
+      "injury": null,
+      "suspension": null,
+      "joined": 1548802800,
+      "contractUntil": 1751234400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "224044",
+      "name": "Tiago Casasola",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/224044-1613557628.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": null,
+      "age": 23,
+      "dateOfBirth": 808092000,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/tiago-casasola-cremonese-1645096510-80410.jpg?lm=1645096524",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "5",
+          "name": "Right-Back",
+          "shortName": "RB",
+          "group": "Defender"
+        },
+        "second": {
+          "id": "8",
+          "name": "Right Midfield",
+          "shortName": "RM",
+          "group": "Midfielder"
+        },
+        "third": {
+          "id": "3",
+          "name": "Centre-Back",
+          "shortName": "CB",
+          "group": "Defender"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 9,
+          "name": "Argentina",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/9.png?lm=1520611569"
+        },
+        {
+          "id": 75,
+          "name": "Italy",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/75.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 400000,
+        "currency": "€",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,88",
+      "foot": "right",
+      "injury": null,
+      "suspension": null,
+      "joined": 1533074400,
+      "contractUntil": 1719698400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "227081",
+      "name": "Joaquín Correa",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/227081-1594716192.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": null,
+      "age": 24,
+      "dateOfBirth": 776728800,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/correa-joaquin-2022-23-argentina-1668534330-96511.jpg?lm=1668534347",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "13",
+          "name": "Second Striker",
+          "shortName": "SS",
+          "group": "Striker"
+        },
+        "second": {
+          "id": "11",
+          "name": "Left Winger",
+          "shortName": "LW",
+          "group": "Striker"
+        },
+        "third": {
+          "id": "14",
+          "name": "Centre-Forward",
+          "shortName": "CF",
+          "group": "Striker"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 9,
+          "name": "Argentina",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/9.png?lm=1520611569"
+        },
+        {
+          "id": 75,
+          "name": "Italy",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/75.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 30500000,
+        "currency": "€",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,79",
+      "foot": "left",
+      "injury": null,
+      "suspension": null,
+      "joined": 1563746400,
+      "contractUntil": 1711133741,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "228761",
+      "name": "Jony",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/228761-1664288388.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "Real Sporting",
+      "shirtNumber": null,
+      "age": 27,
+      "dateOfBirth": 679010400,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/jony-lazio-1567003895-25102.jpg?lm=1567003917",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "11",
+          "name": "Left Winger",
+          "shortName": "LW",
+          "group": "Striker"
+        },
+        "second": null,
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 157,
+          "name": "Spain",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/157.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 6800000,
+        "currency": "€",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,85",
+      "foot": "right",
+      "injury": null,
+      "suspension": null,
+      "joined": 1498860000,
+      "contractUntil": 1751234400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "239802",
+      "name": "Adam Marusic",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/239802-1692962856.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "IMAGO",
+      "shirtNumber": null,
+      "age": 26,
+      "dateOfBirth": 719276400,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/adam-marusic-lazio-1633962751-72554.jpg?lm=1633962758",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "5",
+          "name": "Right-Back",
+          "shortName": "RB",
+          "group": "Defender"
+        },
+        "second": {
+          "id": "4",
+          "name": "Left-Back",
+          "shortName": "LB",
+          "group": "Defender"
+        },
+        "third": {
+          "id": "8",
+          "name": "Right Midfield",
+          "shortName": "RM",
+          "group": "Midfielder"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 216,
+          "name": "Montenegro",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/216.png?lm=1520611569"
+        },
+        {
+          "id": 215,
+          "name": "Serbia",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/215.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 5500000,
+        "currency": "€",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,89",
+      "foot": "right",
+      "injury": null,
+      "suspension": null,
+      "joined": 1562191200,
+      "contractUntil": 1782770400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "239962",
+      "name": "Denis Vavro",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/239962-1656583120.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": null,
+      "age": 23,
+      "dateOfBirth": 829087200,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/denis-vavro-1562337704-23408.jpg?lm=1562337717",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "3",
+          "name": "Centre-Back",
+          "shortName": "CB",
+          "group": "Defender"
+        },
+        "second": null,
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 154,
+          "name": "Slovakia",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/154.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 6500000,
+        "currency": "€",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,87",
+      "foot": "right",
+      "injury": null,
+      "suspension": null,
+      "joined": 1404165600,
+      "contractUntil": 1719698400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "256996",
+      "name": "Guido Guerrieri",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/256996-1634295054.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": null,
+      "age": 23,
+      "dateOfBirth": 825202800,
+      "heroImage": null,
+      "isGoalkeeper": true,
+      "positions": {
+        "first": {
+          "id": "1",
+          "name": "Goalkeeper",
+          "shortName": "GK",
+          "group": "Goalkeeper"
+        },
+        "second": null,
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 75,
+          "name": "Italy",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/75.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 300000,
+        "currency": "€",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,92",
+      "foot": "right",
+      "injury": null,
+      "suspension": null,
+      "joined": 1438812000,
+      "contractUntil": 1782770400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "266302",
+      "name": "Sergej Milinković-Savić",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/266302-1697051652.png?lm=1",
+      "imageLarge": null,
+      "imageSource": "Al-Hilal SFC",
+      "shirtNumber": null,
+      "age": 24,
+      "dateOfBirth": 793839600,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/sergej-milinkovic-savic-al-hilal-2023-1693996752-116042.jpg?lm=1693996767",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "7",
+          "name": "Central Midfield",
+          "shortName": "CM",
+          "group": "Midfielder"
+        },
+        "second": {
+          "id": "10",
+          "name": "Attacking Midfield",
+          "shortName": "AM",
+          "group": "Midfielder"
+        },
+        "third": {
+          "id": "6",
+          "name": "Defensive Midfield",
+          "shortName": "DM",
+          "group": "Midfielder"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 215,
+          "name": "Serbia",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/215.png?lm=1520611569"
+        },
+        {
+          "id": 157,
+          "name": "Spain",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/157.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 64000000,
+        "currency": "€",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,84",
+      "foot": "right",
+      "injury": null,
+      "suspension": null,
+      "joined": 1404165600,
+      "contractUntil": 1719698400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "289087",
+      "name": "Joseph Minala",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/289087-1535098529.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "Joseph Marie Minala",
+      "shirtNumber": null,
+      "age": 22,
+      "dateOfBirth": 840837600,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/joseph-marie-minala-1417088772-3280.jpg?lm=1483605823",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "6",
+          "name": "Defensive Midfield",
+          "shortName": "DM",
+          "group": "Midfielder"
+        },
+        "second": {
+          "id": "7",
+          "name": "Central Midfield",
+          "shortName": "CM",
+          "group": "Midfielder"
+        },
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 31,
+          "name": "Cameroon",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/31.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 650000,
+        "currency": "€",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,74",
+      "foot": "right",
+      "injury": null,
+      "suspension": null,
+      "joined": 1562882400,
+      "contractUntil": 1814306400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "331401",
+      "name": "Manuel Lazzari",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/331401-1707947147.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "IMAGO",
+      "shirtNumber": null,
+      "age": 25,
+      "dateOfBirth": 754527600,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/lazzari-manuel-lazio-2023-1703680481-124995.jpg?lm=1703680494",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "8",
+          "name": "Right Midfield",
+          "shortName": "RM",
+          "group": "Midfielder"
+        },
+        "second": {
+          "id": "5",
+          "name": "Right-Back",
+          "shortName": "RB",
+          "group": "Defender"
+        },
+        "third": {
+          "id": "12",
+          "name": "Right Winger",
+          "shortName": "RW",
+          "group": "Striker"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 75,
+          "name": "Italy",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/75.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 14500000,
+        "currency": "€",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,75",
+      "foot": "left",
+      "injury": null,
+      "suspension": null,
+      "joined": 1561932000,
+      "contractUntil": 1751234400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "331514",
+      "name": "Bobby Adekanye",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/331514-1690213109.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "IMAGO",
+      "shirtNumber": null,
+      "age": 20,
+      "dateOfBirth": 918946800,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/bobby-adekanye-ss-lazio-1596103164-44520.jpg?lm=1596103118",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "12",
+          "name": "Right Winger",
+          "shortName": "RW",
+          "group": "Striker"
+        },
+        "second": {
+          "id": "13",
+          "name": "Second Striker",
+          "shortName": "SS",
+          "group": "Striker"
+        },
+        "third": {
+          "id": "14",
+          "name": "Centre-Forward",
+          "shortName": "CF",
+          "group": "Striker"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 122,
+          "name": "Netherlands",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/122.png?lm=1520611569"
+        },
+        {
+          "id": 124,
+          "name": "Nigeria",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/124.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 525000,
+        "currency": "€",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,86",
+      "foot": "right",
+      "injury": null,
+      "suspension": null,
+      "joined": false,
+      "contractUntil": false,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "391931",
+      "name": "Marco Alia",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/391931-1604409347.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": null,
+      "age": 19,
+      "dateOfBirth": 956700000,
+      "heroImage": null,
+      "isGoalkeeper": true,
+      "positions": {
+        "first": {
+          "id": "1",
+          "name": "Goalkeeper",
+          "shortName": "GK",
+          "group": "Goalkeeper"
+        },
+        "second": null,
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 3,
+          "name": "Albania",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/3.png?lm=1520611569"
+        },
+        {
+          "id": 75,
+          "name": "Italy",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/75.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 100000,
+        "currency": "€",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,85",
+      "foot": "right",
+      "injury": null,
+      "suspension": null,
+      "joined": 1561932000,
+      "contractUntil": 1751234400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "421775",
+      "name": "Nicolò Armini",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/421775-1666173721.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "potenzacalcio.eu",
+      "shirtNumber": null,
+      "age": 18,
+      "dateOfBirth": 983919600,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/nicolo-armini-ss-lazio-1594714523-43446.jpg?lm=1594714486",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "3",
+          "name": "Centre-Back",
+          "shortName": "CB",
+          "group": "Defender"
+        },
+        "second": {
+          "id": "4",
+          "name": "Left-Back",
+          "shortName": "LB",
+          "group": "Defender"
+        },
+        "third": {
+          "id": "5",
+          "name": "Right-Back",
+          "shortName": "RB",
+          "group": "Defender"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 75,
+          "name": "Italy",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/75.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 200000,
+        "currency": "€",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,84",
+      "foot": "left",
+      "injury": null,
+      "suspension": null,
+      "joined": 1590962400,
+      "contractUntil": 1719698400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "457236",
+      "name": "Luca Falbo",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/457236-1670665130.png?lm=1",
+      "imageLarge": null,
+      "imageSource": "monopolicalcio.it",
+      "shirtNumber": null,
+      "age": 19,
+      "dateOfBirth": 951087600,
+      "heroImage": null,
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "4",
+          "name": "Left-Back",
+          "shortName": "LB",
+          "group": "Defender"
+        },
+        "second": {
+          "id": "7",
+          "name": "Central Midfield",
+          "shortName": "CM",
+          "group": "Midfielder"
+        },
+        "third": {
+          "id": "9",
+          "name": "Left Midfield",
+          "shortName": "LM",
+          "group": "Midfielder"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 75,
+          "name": "Italy",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/75.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 100000,
+        "currency": "€",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,87",
+      "foot": "right",
+      "injury": null,
+      "suspension": null,
+      "joined": 1472508000,
+      "contractUntil": 1711133741,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "457931",
+      "name": "Luiz Felipe",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/457931-1595857216.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": null,
+      "age": 22,
+      "dateOfBirth": 858985200,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/luiz-felipe-al-ittihad-club-2023-1698135030-120238.jpg?lm=1698135040",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "3",
+          "name": "Centre-Back",
+          "shortName": "CB",
+          "group": "Defender"
+        },
+        "second": null,
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 75,
+          "name": "Italy",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/75.png?lm=1520611569"
+        },
+        {
+          "id": 26,
+          "name": "Brazil",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/26.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 16000000,
+        "currency": "€",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,84",
+      "foot": "right",
+      "injury": null,
+      "suspension": null,
+      "joined": 1561932000,
+      "contractUntil": 1719698400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "462251",
+      "name": "Jorge Silva",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/462251-1559055870.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "STV",
+      "shirtNumber": null,
+      "age": 20,
+      "dateOfBirth": 918082800,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/jorge-silva-lazio-rom-1559055835-22517.jpg?lm=1559055851",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "3",
+          "name": "Centre-Back",
+          "shortName": "CB",
+          "group": "Defender"
+        },
+        "second": {
+          "id": "6",
+          "name": "Defensive Midfield",
+          "shortName": "DM",
+          "group": "Midfielder"
+        },
+        "third": null
+      },
+      "nationalities": [
+        {
+          "id": 136,
+          "name": "Portugal",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/136.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 50000,
+        "currency": "€",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,80",
+      "foot": "right",
+      "injury": null,
+      "suspension": null,
+      "joined": 1534197600,
+      "contractUntil": 1751234400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "601577",
+      "name": "André Anderson",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/601577-1557500332.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": null,
+      "age": 19,
+      "dateOfBirth": 938037600,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/andre-anderson-salernitana-1613557857-56786.jpg?lm=1613557874",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "10",
+          "name": "Attacking Midfield",
+          "shortName": "AM",
+          "group": "Midfielder"
+        },
+        "second": {
+          "id": "13",
+          "name": "Second Striker",
+          "shortName": "SS",
+          "group": "Striker"
+        },
+        "third": {
+          "id": "7",
+          "name": "Central Midfield",
+          "shortName": "CM",
+          "group": "Midfielder"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 75,
+          "name": "Italy",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/75.png?lm=1520611569"
+        },
+        {
+          "id": 26,
+          "name": "Brazil",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/26.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 725000,
+        "currency": "€",
+        "progression": null
+      }
+    },
+    {
+      "height": "1,69",
+      "foot": "right",
+      "injury": null,
+      "suspension": null,
+      "joined": false,
+      "contractUntil": 1719698400,
+      "captain": false,
+      "lastClub": null,
+      "isLoan": null,
+      "wasLoan": null,
+      "id": "624942",
+      "name": "Raúl Moro",
+      "image": "https://img.a.transfermarkt.technology/portrait/medium/624942-1632729036.jpg?lm=1",
+      "imageLarge": null,
+      "imageSource": "imago images",
+      "shirtNumber": null,
+      "age": 16,
+      "dateOfBirth": 1039042800,
+      "heroImage": "https://tmssl.akamaized.net/images/foto/normal/raul-moro-lazio-1632729096-71726.jpg?lm=1632729112",
+      "isGoalkeeper": false,
+      "positions": {
+        "first": {
+          "id": "11",
+          "name": "Left Winger",
+          "shortName": "LW",
+          "group": "Striker"
+        },
+        "second": {
+          "id": "12",
+          "name": "Right Winger",
+          "shortName": "RW",
+          "group": "Striker"
+        },
+        "third": {
+          "id": "14",
+          "name": "Centre-Forward",
+          "shortName": "CF",
+          "group": "Striker"
+        }
+      },
+      "nationalities": [
+        {
+          "id": 157,
+          "name": "Spain",
+          "image": "https://tmssl.akamaized.net/images/flagge/small/157.png?lm=1520611569"
+        }
+      ],
+      "marketValue": {
+        "value": 2500000,
+        "currency": "€",
+        "progression": null
+      }
+    }
+  ]
+}

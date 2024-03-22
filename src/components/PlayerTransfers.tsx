@@ -45,11 +45,17 @@ const PlayerTransfers = () => {
                     <TransferCard
                       team={item.newClubName}
                       logo={item.newClubImage}
-                      date={styleDate(
-                        item,
-                        i,
-                        styleTransferHistory(player?.data.transferHistory!!)
-                      )}
+                      date={
+                        item.loan === "ist"
+                          ? "loan"
+                          : styleDate(
+                              item,
+                              i,
+                              styleTransferHistory(
+                                player?.data.transferHistory!!
+                              )
+                            )
+                      }
                     />
                   </motion.div>
                 );

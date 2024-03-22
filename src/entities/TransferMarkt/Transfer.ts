@@ -6,6 +6,7 @@ export interface Transfer {
   newClubID: string;
   newClubName: string;
   newClubImage: string;
+  loan: string;
   playerName: string;
   playerImage: string;
   countryID: string;
