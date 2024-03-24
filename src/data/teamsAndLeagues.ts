@@ -15,14 +15,23 @@ export const teams = [
 ];
 
 export const leagues = [
-  { id: "1", name: "Serie A", teams: ["46", "12", "5", "6195", "506", "398"] },
-  { id: "2", name: "Premier League", teams: ["11", "631", "31"] },
+  {
+    id: "1",
+    name: "Serie A 🇮🇹",
+    teams: ["46", "12", "5", "6195", "506", "398"],
+  },
+  { id: "2", name: "Premier League 🏴󠁧󠁢󠁥󠁮󠁧󠁿", teams: ["11", "631", "31"] },
+  {
+    id: "999",
+    name: "All leagues 🧾",
+    teams: ["46", "12", "5", "6195", "506", "398", "11", "631", "31"],
+  },
 ];
 
 export const levels = [
   {
     id: "1",
-    name: "Easy",
+    name: "Amateur 🌶️",
     seasons: [
       2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021,
       2022,
@@ -30,12 +39,12 @@ export const levels = [
   },
   {
     id: "2",
-    name: "Medium",
+    name: "Semi-Pro 🌶️🌶️",
     seasons: [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009],
   },
   {
     id: "3",
-    name: "Hard",
+    name: "Veteran 🌶️🌶️🌶️",
     seasons: [1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999],
   },
 ];

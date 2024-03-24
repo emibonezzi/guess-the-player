@@ -101,7 +101,7 @@ const Homepage = () => {
             ))}
           </Select>
           <FormHelperText>
-            The extreme mode will unleash obscure players.
+            The veteran mode will unleash obscure players. 😨
           </FormHelperText>
         </FormControl>
         <Button
