@@ -1,12 +1,12 @@
 import { useQueries, useQuery } from "@tanstack/react-query";
 import ms from "ms";
-import { seasons, teams } from "../data/teamsAndLeagues";
 import { Squad } from "../entities/TransferMarkt/Squad";
 import { TransferHistory } from "../entities/TransferMarkt/TransferHistory";
 import APIClient from "../services/api-client";
 import useUserHistoryStore from "../state-management/user-history/store";
 import getRandomItem from "../utils/getRandomItem";
 import useCurrentPlayerStore from "../state-management/current-player/store";
+import useFilterQueryStore from "../state-management/filter-query/store";
 
 const apiClientSquad = new APIClient<Squad>("/clubs/squad");
 
@@ -18,16 +18,17 @@ const usePlayer = () => {
   const { questionToggle } = useUserHistoryStore();
   const { playerGuessed } = useUserHistoryStore();
   const { setNationality, setPosition } = useCurrentPlayerStore();
+  const { teams, level } = useFilterQueryStore();
 
   // get multiple squads from random season and assemble list of players ID
   const allData = useQueries({
     queries: teams.map((team) => ({
-      queryKey: ["team", team],
+      queryKey: ["team", [team, level]],
       queryFn: () =>
         apiClientSquad.getAll({
           params: {
             club_id: team,
-            season_id: getRandomItem(seasons),
+            season_id: getRandomItem(level),
             locale: "COM",
           },
         }),

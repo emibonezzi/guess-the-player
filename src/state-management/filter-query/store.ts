@@ -1,5 +1,6 @@
 import { mountStoreDevtool } from "simple-zustand-devtools";
 import { create } from "zustand";
+import { leagues, levels } from "../../data/teamsAndLeagues";
 
 interface FilterQueryStore {
   teams: string[];
@@ -9,9 +10,9 @@ interface FilterQueryStore {
 }
 
 const useFilterQueryStore = create<FilterQueryStore>((set) => ({
-  teams: [],
+  teams: leagues[0].teams,
   setCurrentTeams: (newTeamsArray) => set(() => ({ teams: newTeamsArray })),
-  level: [],
+  level: levels[0].seasons,
   setLevel: (newLevelArray) => set(() => ({ level: newLevelArray })),
 }));
 
