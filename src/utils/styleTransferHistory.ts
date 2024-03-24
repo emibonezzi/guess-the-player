@@ -5,7 +5,7 @@ import { cleanTransferList } from "./cleanTransferList";
 
 export function styleTransferHistory(arr: Transfer[] | any) {
   // if less than 8 transfers just reverse arr
-  if (arr.length <= 10) return cleanTransferList(arr.slice().reverse());
+  if (arr.length <= 8) return cleanTransferList(arr.slice().reverse());
 
   // if more show first 2 and last 5
 
