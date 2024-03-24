@@ -70,7 +70,7 @@ const Homepage = () => {
             onChange={(e) =>
               setCurrentTeams(
                 leagues.find((league) => league.id === e.currentTarget.value)
-                  ?.teams
+                  ?.teams!!
               )
             }
           >
@@ -90,7 +90,7 @@ const Homepage = () => {
             onChange={(e) =>
               setLevel(
                 levels.find((level) => level.id === e.currentTarget.value)
-                  ?.seasons
+                  ?.seasons!!
               )
             }
           >
