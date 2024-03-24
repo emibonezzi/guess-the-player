@@ -27,7 +27,7 @@ export const leagues = [
   },
   { id: "3", name: "Bundesliga 🇩🇪", teams: ["27", "16"] },
   { id: "4", name: "Ligue 1 🇫🇷", teams: ["583"] },
-  { id: "5", name: "La Liga 🇪🇸", teams: ["131, 418"] },
+  { id: "5", name: "La Liga 🇪🇸", teams: ["131", "418"] },
   {
     id: "999",
     name: "All leagues 🧾",
