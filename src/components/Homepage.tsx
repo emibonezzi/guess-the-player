@@ -15,10 +15,13 @@ import { FaQuestion } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/logoGTP.png";
 import usePlayer from "../hooks/usePlayer";
+import { leagues, levels } from "../data/teamsAndLeagues";
+import useFilterQueryStore from "../state-management/filter-query/store";
 
 const Homepage = () => {
   const navigate = useNavigate();
   const { refetchPlayer } = usePlayer();
+  const { setCurrentTeams, setLevel } = useFilterQueryStore();
 
   return (
     <Box
@@ -63,8 +66,19 @@ const Homepage = () => {
 
         <FormControl w="280px">
           <FormLabel>League: </FormLabel>
-          <Select>
-            <option value=""></option>
+          <Select
+            onChange={(e) =>
+              setCurrentTeams(
+                leagues.find((league) => league.id === e.currentTarget.value)
+                  ?.teams
+              )
+            }
+          >
+            {leagues.map((league) => (
+              <option key={league.id} value={league.id}>
+                {league.name}
+              </option>
+            ))}
           </Select>
           <FormHelperText>
             Up for a challenge? Select all leagues.
@@ -72,8 +86,19 @@ const Homepage = () => {
         </FormControl>
         <FormControl w="280px">
           <FormLabel>Level: </FormLabel>
-          <Select>
-            <option value=""></option>
+          <Select
+            onChange={(e) =>
+              setLevel(
+                levels.find((level) => level.id === e.currentTarget.value)
+                  ?.seasons
+              )
+            }
+          >
+            {levels.map((level) => (
+              <option key={level.id} value={level.id}>
+                {level.name}
+              </option>
+            ))}
           </Select>
           <FormHelperText>
             The extreme mode will unleash obscure players.

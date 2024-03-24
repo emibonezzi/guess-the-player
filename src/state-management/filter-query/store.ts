@@ -1,16 +1,18 @@
-import { create } from "zustand";
-import { FilterQuery } from "../../entities/FilterQuery";
 import { mountStoreDevtool } from "simple-zustand-devtools";
+import { create } from "zustand";
 
 interface FilterQueryStore {
-  filterQuery: FilterQuery | null;
-  setFilterQuery: (filterQuery: FilterQuery) => void;
+  teams: string[];
+  setCurrentTeams: (teams: string[]) => void;
+  level: number[];
+  setLevel: (level: number[]) => void;
 }
 
 const useFilterQueryStore = create<FilterQueryStore>((set) => ({
-  filterQuery: null,
-  setFilterQuery: (newFilterQuery) =>
-    set(() => ({ filterQuery: newFilterQuery })),
+  teams: [],
+  setCurrentTeams: (newTeamsArray) => set(() => ({ teams: newTeamsArray })),
+  level: [],
+  setLevel: (newLevelArray) => set(() => ({ level: newLevelArray })),
 }));
 
 if (process.env.NODE_ENV === "development") {
