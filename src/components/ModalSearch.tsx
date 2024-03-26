@@ -33,7 +33,7 @@ const ModalSearch = ({ isOpen, onClose }: Props) => {
           <ModalHeader>Results for "{text}"</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <LoadingSkeletons />;
+            <LoadingSkeletons />
           </ModalBody>
 
           <ModalFooter>
