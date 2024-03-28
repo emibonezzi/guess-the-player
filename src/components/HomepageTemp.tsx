@@ -51,7 +51,7 @@ const HomepageTemp = () => {
         <FormControl w="280px">
           <Heading>
             Oops. This project is paused for lack of funds. <br /> <br />{" "}
-            #BrokeAlert
+            #BrokeDevAlert
           </Heading>
         </FormControl>
       </motion.div>
